@@ -19,7 +19,8 @@ public class PlaneBehaviour : MonoBehaviour {
 	void Update () {
         direction = (direction +pitchRate * Input.GetAxisRaw("Vertical")) % 360;
         transform.eulerAngles = new Vector3(0,0,direction);
-        float actualSpeed = baseSpeed - gravity * Mathf.Sin(Mathf.Deg2Rad*direction);
+        float multiplier = Mathf.Sin(Mathf.Deg2Rad * direction);
+        float actualSpeed = baseSpeed - gravity * (multiplier / (multiplier > 0? 2 : 1));
         rb.velocity = new Vector2(actualSpeed * Mathf.Cos(Mathf.Deg2Rad*direction), actualSpeed * Mathf.Sin(Mathf.Deg2Rad * direction));
         //TODO lerp speed instead?
 	}
