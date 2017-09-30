@@ -15,6 +15,7 @@ public class GunBehaviour : MonoBehaviour {
     public float BulletSpeed;
 
     private Rigidbody2D m_rigidbody2D;
+    private Animator m_animator;
     private bool m_flip;
     private float m_direction;
 
@@ -22,6 +23,7 @@ public class GunBehaviour : MonoBehaviour {
     // Use this for initialization
     void Start () {
         m_rigidbody2D = GetComponent<Rigidbody2D>();
+        m_animator = GetComponent<Animator>();
         m_flip = false;
 
         StartCoroutine(ChangeRotation());
@@ -92,6 +94,8 @@ public class GunBehaviour : MonoBehaviour {
                 float fireCooldown = 1 / FireRate;
                 GameObject obj = (GameObject)Instantiate(BulletPrefab, BulletSpawnPoint.transform.position, transform.rotation);
                 obj.GetComponent<IBullet>().SetTravelProperties(transform.eulerAngles.z, BulletSpeed);
+
+                m_animator.SetTrigger("fire");
 
                 yield return new WaitForSeconds(fireCooldown);
             }
