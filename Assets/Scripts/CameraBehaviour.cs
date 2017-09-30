@@ -37,7 +37,10 @@ public class CameraBehaviour : MonoBehaviour {
             Vector3 total = Vector3.zero;
             foreach(GameObject player in PlayerRefs)
             {
-                total += player.transform.position;
+                if(player != null)
+                {
+                    total += player.transform.position;
+                }
             }
 
             m_averageLocation = total / PlayerRefs.Length;
@@ -51,7 +54,9 @@ public class CameraBehaviour : MonoBehaviour {
 
     void UpdateCameraSize()
     {
-        Vector3 dist = PlayerRefs[0].transform.position - PlayerRefs[1].transform.position;
+        Vector3 firstRef = PlayerRefs[0] == null ? Vector3.zero : PlayerRefs[0].transform.position;
+        Vector3 secondRef = PlayerRefs[1] == null ? Vector3.zero : PlayerRefs[1].transform.position;
+        Vector3 dist = firstRef - secondRef;
 
         float xScale = Mathf.Abs(dist.x / XFactor);
         float yScale = Mathf.Abs(dist.y / YFactor);
