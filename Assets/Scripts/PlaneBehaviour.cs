@@ -27,4 +27,10 @@ public class PlaneBehaviour : MonoBehaviour {
         rb.velocity = new Vector2(actualSpeed * Mathf.Cos(Mathf.Deg2Rad*direction), actualSpeed * Mathf.Sin(Mathf.Deg2Rad * direction));
         //TODO lerp speed instead?
 	}
+
+    public void triggerDeath()
+    {
+        //Do dying things here
+        Destroy(transform.parent.gameObject, 10);
+    }
 }
