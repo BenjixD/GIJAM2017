@@ -13,6 +13,8 @@ public class BasicBullet : MonoBehaviour, IBullet
         m_spawnedBy = spawner;
     }
 
+    public GameObject GetSpawnedBy (){ return m_spawnedBy;  }
+
     public void SetTravelProperties(float angle, float speed)
     {
         float xSpeed = Mathf.Cos(angle * Mathf.Deg2Rad) * speed;

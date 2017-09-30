@@ -89,7 +89,7 @@ public class GunBehaviour : MonoBehaviour {
     {
         for(;;)
         {
-            if(Input.GetButton("Fire" + (int)CurrentPlayer))
+            if(Input.GetAxisRaw("Fire" + (int)CurrentPlayer)!= 0)
             {
                 float fireCooldown = 1 / FireRate;
                 GameObject obj = (GameObject)Instantiate(BulletPrefab, BulletSpawnPoint.transform.position, transform.rotation);

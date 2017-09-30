@@ -31,6 +31,6 @@ public class PlaneBehaviour : MonoBehaviour {
     public void triggerDeath()
     {
         //Do dying things here
-        Destroy(transform.parent.gameObject, 10);
+        Destroy(transform.root.gameObject, 1);
     }
 }
