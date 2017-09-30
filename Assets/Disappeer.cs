@@ -14,7 +14,7 @@ public class Disappeer : MonoBehaviour {
 		
 	}
 
-	void OnCollisionEnter(Collision2D c){
+	void OnCollisionEnter2D(Collision2D c){
 		Destroy (gameObject);
 	}
 }
