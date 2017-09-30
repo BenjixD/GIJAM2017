@@ -6,6 +6,13 @@ public class BasicBullet : MonoBehaviour, IBullet
 {
     public float Damage;
 
+    private GameObject m_spawnedBy;
+
+    public void SetSpawnedBy(GameObject spawner)
+    {
+        m_spawnedBy = spawner;
+    }
+
     public void SetTravelProperties(float angle, float speed)
     {
         float xSpeed = Mathf.Cos(angle * Mathf.Deg2Rad) * speed;
@@ -14,7 +21,15 @@ public class BasicBullet : MonoBehaviour, IBullet
         GetComponent<Rigidbody2D>().velocity = new Vector3(xSpeed, ySpeed, 0);
     }
 
-    public float GetDamage()
+    void OnTriggerEnter2D(Collider2D c)
+    {
+        if(c.transform.root != m_spawnedBy.transform.root)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+public float GetDamage()
     {
         return Damage;
     }

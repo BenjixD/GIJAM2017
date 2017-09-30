@@ -93,7 +93,16 @@ public class GunBehaviour : MonoBehaviour {
             {
                 float fireCooldown = 1 / FireRate;
                 GameObject obj = (GameObject)Instantiate(BulletPrefab, BulletSpawnPoint.transform.position, transform.rotation);
+                
+                obj.GetComponent<IBullet>().SetSpawnedBy(this.gameObject);
                 obj.GetComponent<IBullet>().SetTravelProperties(transform.eulerAngles.z, BulletSpeed);
+
+                Collider2D[] colliders = obj.GetComponents<Collider2D>();
+                foreach(Collider2D col in colliders)
+                {
+                    col.enabled = true;
+                }
+
 
                 m_animator.SetTrigger("fire");
 

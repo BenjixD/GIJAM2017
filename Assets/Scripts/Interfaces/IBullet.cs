@@ -4,8 +4,7 @@ using UnityEngine;
 
 public interface IBullet
 {
-    bool enabled { get; set; }
-
+    void SetSpawnedBy(GameObject spawner);
     void SetTravelProperties(float angle, float speed);
     float GetDamage();
 }
