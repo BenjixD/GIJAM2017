@@ -91,11 +91,7 @@ public class GunBehaviour : MonoBehaviour {
             {
                 float fireCooldown = 1 / FireRate;
                 GameObject obj = (GameObject)Instantiate(BulletPrefab, BulletSpawnPoint.transform.position, transform.rotation);
-
-                float xSpeed = Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad) * BulletSpeed;
-                float ySpeed = Mathf.Sin(transform.eulerAngles.z * Mathf.Deg2Rad) * BulletSpeed;
-
-                obj.GetComponent<Rigidbody2D>().velocity = new Vector3(xSpeed, ySpeed, 0);
+                obj.GetComponent<IBullet>().SetTravelProperties(transform.eulerAngles.z, BulletSpeed);
 
                 yield return new WaitForSeconds(fireCooldown);
             }
