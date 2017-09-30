@@ -6,15 +6,27 @@ public class CameraBehaviour : MonoBehaviour {
 
     public GameObject[] PlayerRefs;
 
+    public float XFactor;
+    public float YFactor;
+
+    public float MinSize;
+    public float MaxSize;
+
+    public float SmoothSpeed;
+
     private Vector3 m_averageLocation;
+    private Camera m_camera;
 
     // Use this for initialization
     void Start () {
+        m_camera = GetComponent<Camera>();
         StartCoroutine(CalculateLocation());
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
+        UpdateCameraSize();
 
 	}
 
@@ -35,5 +47,18 @@ public class CameraBehaviour : MonoBehaviour {
 
             yield return new WaitForFixedUpdate();
         }
+    }
+
+    void UpdateCameraSize()
+    {
+        Vector3 dist = PlayerRefs[0].transform.position - PlayerRefs[1].transform.position;
+
+        float xScale = Mathf.Abs(dist.x / XFactor);
+        float yScale = Mathf.Abs(dist.y / YFactor);
+
+        float scale = Mathf.Clamp(Mathf.Max(xScale, yScale), MinSize, MaxSize);
+
+        //m_camera.orthographicSize = Mathf.MoveTowards(m_camera.orthographicSize, scale, SmoothSpeed * Time.deltaTime);
+        m_camera.orthographicSize = scale;
     }
 }
