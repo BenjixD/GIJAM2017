@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class GunBehaviour : MonoBehaviour {
 
+    public Player.Control CurrentPlayer;
+
     public float PitchRate;
     public float DeadThreshold;
+
+    public GameObject BulletSpawnPoint;
+    public GameObject BulletPrefab;
+    public float FireRate;
+    public float BulletSpeed;
 
     private Rigidbody2D m_rigidbody2D;
     private bool m_flip;
@@ -18,42 +25,20 @@ public class GunBehaviour : MonoBehaviour {
         m_flip = false;
 
         StartCoroutine(ChangeRotation());
+        StartCoroutine(Fire());
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	}
 
-    void Flip(Vector3 actualTarget)
-    {
-        if ((actualTarget.z > 90 && actualTarget.z <= 270) && !m_flip)
-        {
-            m_flip = !m_flip;
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-        }
-        else if ((actualTarget.z % 360 <= 90 || actualTarget.z % 360 > 270) && m_flip)
-        {
-            m_flip = !m_flip;
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-        }
-    }
-
     IEnumerator ChangeRotation()
     {
         for(;;)
         {
-            float horizontalAxis = Input.GetAxis("Horizontal");
-            float verticalAxis = Input.GetAxis("Vertical");
-            /*
-            if(horizontalAxis != Mathf.Abs(Input.GetAxis("Horizontal")))
-            {
-                m_flip = true;
-            }
-            else
-            {
-                m_flip = false;
-            }
-            */
+            float horizontalAxis = Input.GetAxis("Horizontal" + (int)CurrentPlayer);
+            float verticalAxis = Input.GetAxis("Vertical" + (int)CurrentPlayer);
+
             if(Mathf.Abs(horizontalAxis) > DeadThreshold || Mathf.Abs(verticalAxis) > DeadThreshold)
             {
                 float rotateTo = (Mathf.Rad2Deg * Mathf.Atan2(horizontalAxis, -1 * verticalAxis) + 270) % 360;
@@ -92,11 +77,33 @@ public class GunBehaviour : MonoBehaviour {
                     m_flip = !m_flip;
                     transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
                 }
-
-
             }
 
             yield return new WaitForFixedUpdate();
         }
     }
+
+    IEnumerator Fire()
+    {
+        for(;;)
+        {
+            if(Input.GetButton("Fire" + (int)CurrentPlayer))
+            {
+                float fireCooldown = 1 / FireRate;
+                GameObject obj = (GameObject)Instantiate(BulletPrefab, BulletSpawnPoint.transform.position, transform.rotation);
+
+                float xSpeed = Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad) * BulletSpeed;
+                float ySpeed = Mathf.Sin(transform.eulerAngles.z * Mathf.Deg2Rad) * BulletSpeed;
+
+                obj.GetComponent<Rigidbody2D>().velocity = new Vector3(xSpeed, ySpeed, 0);
+
+                yield return new WaitForSeconds(fireCooldown);
+            }
+            else
+            {
+                yield return new WaitForFixedUpdate();
+            }
+        }
+    }
+
 }
