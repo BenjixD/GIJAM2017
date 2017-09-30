@@ -32,6 +32,14 @@ public class GunBehaviour : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (Input.GetButtonDown("Switch1"))
+        {
+            transform.root.GetComponent<PlaneBehaviour>().setSwitchRequested(true);
+        }
+        else if (Input.GetButtonUp("Switch1"))
+        {
+            transform.root.GetComponent<PlaneBehaviour>().setSwitchRequested(false);
+        }
 	}
 
     IEnumerator ChangeRotation()
@@ -115,4 +123,21 @@ public class GunBehaviour : MonoBehaviour {
         }
     }
 
+    public void Switch(float delay, Player.Control newplayer)
+    {
+        StopAllCoroutines();
+        //m_animator.SetBool("Transformers", true);
+        StartCoroutine(SwitchOp(delay, newplayer));
+        
+    }
+
+    IEnumerator SwitchOp(float delay, Player.Control newplayer)
+    {
+        //m_animator.setTrigger("Transformers robots in disguise");
+        yield return new WaitForSeconds(delay);
+        CurrentPlayer = newplayer;
+
+        StartCoroutine(ChangeRotation());
+        StartCoroutine(Fire());
+    }
 }
