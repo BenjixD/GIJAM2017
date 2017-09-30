@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlaneBehaviour : MonoBehaviour {
 
     Rigidbody2D rb;
+
+    public Player.Control currentPlayer;
+
     // gravity is the speed additive before being modified by direction
     public float baseSpeed, pitchRate, gravity;
     float direction;
@@ -17,7 +20,7 @@ public class PlaneBehaviour : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        direction = (direction +pitchRate * Input.GetAxisRaw("Vertical")) % 360;
+        direction = (direction +pitchRate * Input.GetAxisRaw("Vertical" + (int)currentPlayer)) % 360;
         transform.eulerAngles = new Vector3(0,0,direction);
         float multiplier = Mathf.Sin(Mathf.Deg2Rad * direction);
         float actualSpeed = baseSpeed - gravity * (multiplier / (multiplier > 0? 2 : 1));
