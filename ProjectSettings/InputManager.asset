@@ -179,7 +179,7 @@ InputManager:
     snap: 0
     invert: 0
     type: 2
-    axis: 4
+    axis: 8
     joyNum: 1
   - serializedVersion: 3
     m_Name: Fire2
@@ -195,7 +195,7 @@ InputManager:
     snap: 0
     invert: 0
     type: 0
-    axis: 0
+    axis: 8
     joyNum: 2
   - serializedVersion: 3
     m_Name: Fire3
@@ -211,7 +211,7 @@ InputManager:
     snap: 0
     invert: 0
     type: 0
-    axis: 0
+    axis: 8
     joyNum: 3
   - serializedVersion: 3
     m_Name: Fire4
@@ -227,7 +227,7 @@ InputManager:
     snap: 0
     invert: 0
     type: 0
-    axis: 0
+    axis: 8
     joyNum: 4
   - serializedVersion: 3
     m_Name: Fire5

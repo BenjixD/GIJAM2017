@@ -66,13 +66,13 @@ public class GunBehaviour : MonoBehaviour {
                     }
                 }
 
-                if (myRotation + 360 % 360 > 90 && myRotation + 360 % 360 < 270 &&!m_flip)
+                if (transform.localEulerAngles.z + 360 % 360 > 90 && transform.localEulerAngles.z + 360 % 360 < 270 &&!m_flip)
                 {
                     //nextRotation = 180 - nextRotation;
                     m_flip = !m_flip;
                     transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
                 }
-                else if ((myRotation + 360 % 360 < 90 || myRotation + 360 % 360 > 270) && m_flip)
+                else if ((transform.localEulerAngles.z + 360 % 360 < 90 || transform.localEulerAngles.z + 360 % 360 > 270) && m_flip)
                 {
                     m_flip = !m_flip;
                     transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
