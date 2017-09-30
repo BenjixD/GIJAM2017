@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 1194333273}
   - component: {fileID: 1194333272}
   m_Layer: 0
-  m_Name: Object1
+  m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -218,11 +218,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1194333271}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5317d8eb26ef4236aa7c81926ca75ed, type: 3}
+  m_Script: {fileID: 11500000, guid: e5cfeafeb70daff448f467217be104a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  flip: 1
+  baseSpeed: 3
+  pitchRate: 2
+  gravity: 1.5
 --- !u!212 &1194333273
 SpriteRenderer:
   m_ObjectHideFlags: 0
