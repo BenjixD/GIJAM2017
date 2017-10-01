@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 58103172173887652}
   - component: {fileID: 114907695942477762}
   - component: {fileID: 82768002299444914}
+  - component: {fileID: 114857026997484076}
   m_Layer: 8
   m_Name: bullet1
   m_TagString: Untagged
@@ -78,7 +79,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.03
+  m_Radius: 0.25
 --- !u!82 &82768002299444914
 AudioSource:
   m_ObjectHideFlags: 1
@@ -159,6 +160,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114857026997484076
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1746874047614816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac65c461bc1b4448a95bf20927187fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Life: 8
 --- !u!114 &114907695942477762
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -8,6 +8,7 @@ public class PlaneBehaviour : MonoBehaviour, IPlayer {
 
     public Player.Control currentPlayer;
     public GameObject IndicateSwitch;
+    public GameObject SwapNotice;
 
     bool switchRequested;
 
@@ -66,7 +67,6 @@ public class PlaneBehaviour : MonoBehaviour, IPlayer {
     {
         switchRequested = s;
         IndicateSwitch.GetComponent<SpriteRenderer>().enabled = s;
-        
     }
 
     void Switch()
@@ -98,11 +98,17 @@ public class PlaneBehaviour : MonoBehaviour, IPlayer {
         currentPlayer = gunplayer;
         GameObject.Find("Main Camera").GetComponent<MatchManager>().faceswap(gameObject);
         switchRequested = false;
+
+        //Spawn Swap Indicator
+        GameObject obj = (GameObject)Instantiate(SwapNotice, transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
+        obj.GetComponent<Follow>().Target = this.gameObject;
+        obj.SetActive(true);
+
         yield return new WaitForSeconds(delay);
         enabled = true;
 
         //StopCoroutine(WatchForSwitchRequest());
-        foreach (SpriteRenderer render in GetComponentsInChildren<SpriteRenderer>())
+        foreach (SpriteRenderer render in transform.GetChild(0).GetComponentsInChildren<SpriteRenderer>())
         {
             render.enabled = true;
         }
@@ -160,7 +166,7 @@ public class PlaneBehaviour : MonoBehaviour, IPlayer {
         yield return new WaitForSeconds(0.5f);
 
         //StartCoroutine(WatchForSwitchRequest());
-        foreach (SpriteRenderer render in GetComponentsInChildren<SpriteRenderer>())
+        foreach (SpriteRenderer render in transform.GetChild(0).GetComponentsInChildren<SpriteRenderer>())
         {
             render.enabled = true;
         }
