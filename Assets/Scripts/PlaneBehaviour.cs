@@ -96,6 +96,7 @@ public class PlaneBehaviour : MonoBehaviour, IPlayer {
         Player.Control gunplayer = gun.CurrentPlayer;
         gun.Switch(delay, currentPlayer);
         currentPlayer = gunplayer;
+        GameObject.Find("Main Camera").GetComponent<MatchManager>().faceswap(gameObject);
         switchRequested = false;
         yield return new WaitForSeconds(delay);
         enabled = true;
