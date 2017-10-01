@@ -4,18 +4,44 @@ using UnityEngine;
 
 public class WindManager : MonoBehaviour {
 
+	private int totalBullets;
 	public string direction; 
 	public GameObject Clouds;
 	public GameObject leftBoundary;
 	public GameObject rightBoundary;
+	public GameObject GlobalCounter;
+	private float r = 0.5f;
+	private float g = 0.5f;
+	private float b = 0.5f;
+	private float a = 1f;
 
 	// Use this for initialization
 	void Start () {
 		direction = "left";
+		totalBullets = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		Debug.Log (GlobalCounter.GetComponent<GlobalCount> ().totalBullets);
+		if (GlobalCounter.GetComponent<GlobalCount> ().totalBullets == 49) {
+			GlobalCounter.GetComponent<GlobalCount> ().totalBullets += 1;
+		}
+		if(GlobalCounter.GetComponent<GlobalCount>().totalBullets >= 50){
+			Debug.Log ("DARKEN");
+			//darken
+			foreach (Transform child in Clouds.transform) {
+				SpriteRenderer spriteColour = child.GetComponent<SpriteRenderer> ();
+				if (r > 0 && g > 0 && b > 0) {
+					r = r - 0.01f;
+					g = g - 0.01f;
+					b = b - 0.01f;
+				}
+				spriteColour.color = new Color (r, g, b , a);
+			}
+			//reset
+			GlobalCounter.GetComponent<GlobalCount>().totalBullets = 0;
+		}
 
 		if (direction == "left") {
 			foreach (Transform child in Clouds.transform) {

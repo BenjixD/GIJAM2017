@@ -9,6 +9,7 @@ public class GunBehaviour : MonoBehaviour {
     public float PitchRate;
     public float DeadThreshold;
 
+	public GameObject GlobalCounter;
     public GameObject BulletSpawnPoint;
     public GameObject BulletPrefab;
     public float FireRate;
@@ -110,6 +111,7 @@ public class GunBehaviour : MonoBehaviour {
                     GameObject obj = (GameObject)Instantiate(BulletPrefab, BulletSpawnPoint.transform.position, transform.rotation);
                     obj.GetComponent<IBullet>().SetSpawnedBy(this.gameObject);
                     obj.GetComponent<IBullet>().SetTravelProperties(transform.eulerAngles.z, BulletSpeed);
+					obj.transform.parent = GlobalCounter.transform;
 
                     Collider2D[] colliders = obj.GetComponents<Collider2D>();
                     foreach (Collider2D col in colliders)

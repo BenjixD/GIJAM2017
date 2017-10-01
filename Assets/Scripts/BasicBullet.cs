@@ -28,6 +28,9 @@ public class BasicBullet : MonoBehaviour, IBullet
         if(c.transform.root != m_spawnedBy.transform.root)
         {
             Destroy(gameObject);
+			Debug.Log (this.transform.parent.GetComponent<GlobalCount> ().totalBullets);
+			this.transform.parent.GetComponent<GlobalCount> ().totalBullets += 1;
+			Debug.Log (this.transform.parent.GetComponent<GlobalCount> ().totalBullets);
         }
     }
 
