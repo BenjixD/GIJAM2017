@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 8118544}
   - component: {fileID: 8118543}
   - component: {fileID: 8118542}
+  - component: {fileID: 8118546}
   m_Layer: 10
   m_Name: sky12 (1)
   m_TagString: Untagged
@@ -242,6 +243,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &8118546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 8118540}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &14463151
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,6 +269,7 @@ GameObject:
   - component: {fileID: 14463155}
   - component: {fileID: 14463154}
   - component: {fileID: 14463153}
+  - component: {fileID: 14463157}
   m_Layer: 10
   m_Name: sky13 (1)
   m_TagString: Untagged
@@ -376,6 +392,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &14463157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 14463151}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &16198805
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,6 +566,7 @@ GameObject:
   - component: {fileID: 67064880}
   - component: {fileID: 67064879}
   - component: {fileID: 67064881}
+  - component: {fileID: 67064882}
   m_Layer: 10
   m_Name: sky11
   m_TagString: Untagged
@@ -658,6 +689,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
   m_EdgeRadius: 0
+--- !u!114 &67064882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 67064876}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &73276907
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,6 +882,7 @@ GameObject:
   - component: {fileID: 159773711}
   - component: {fileID: 159773710}
   - component: {fileID: 159773709}
+  - component: {fileID: 159773713}
   m_Layer: 10
   m_Name: sky6 (2)
   m_TagString: Untagged
@@ -959,6 +1005,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &159773713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 159773707}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &211444785
 GameObject:
   m_ObjectHideFlags: 0
@@ -1443,7 +1503,28 @@ Prefab:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 63548ca401b10834087b2f0a4023c31b, type: 3}
-    m_RemovedComponents: []
+    - target: {fileID: 82729374884474496, guid: 3c3c185ef18259247b08b006f997db01,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82325863448085244, guid: 3c3c185ef18259247b08b006f997db01,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82729374884474496, guid: 3c3c185ef18259247b08b006f997db01,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82325863448085244, guid: 3c3c185ef18259247b08b006f997db01,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 82729374884474496, guid: 3c3c185ef18259247b08b006f997db01, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 3c3c185ef18259247b08b006f997db01, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &312785304
@@ -1474,6 +1555,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalBullets: 0
+  threshold1: 3
+  threshold2: 10
+  Clouds: {fileID: 1884355822}
+  Lt: {fileID: 472902865}
+  SoundOfLightning: {fileID: 472902875}
 --- !u!4 &312785306
 Transform:
   m_ObjectHideFlags: 0
@@ -1499,6 +1585,7 @@ GameObject:
   - component: {fileID: 324052836}
   - component: {fileID: 324052835}
   - component: {fileID: 324052834}
+  - component: {fileID: 324052838}
   m_Layer: 10
   m_Name: sky12 (2)
   m_TagString: Untagged
@@ -1621,6 +1708,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &324052838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 324052832}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &344738551
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,6 +1734,7 @@ GameObject:
   - component: {fileID: 344738555}
   - component: {fileID: 344738554}
   - component: {fileID: 344738556}
+  - component: {fileID: 344738557}
   m_Layer: 10
   m_Name: sky13
   m_TagString: Untagged
@@ -1755,6 +1857,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
   m_EdgeRadius: 0
+--- !u!114 &344738557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 344738551}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &346849402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,6 +2066,7 @@ GameObject:
   - component: {fileID: 439695666}
   - component: {fileID: 439695665}
   - component: {fileID: 439695664}
+  - component: {fileID: 439695668}
   m_Layer: 10
   m_Name: sky11 (1)
   m_TagString: Untagged
@@ -2072,6 +2189,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &439695668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 439695662}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &461661900
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,6 +2215,7 @@ GameObject:
   - component: {fileID: 461661904}
   - component: {fileID: 461661903}
   - component: {fileID: 461661905}
+  - component: {fileID: 461661906}
   m_Layer: 10
   m_Name: sky3
   m_TagString: Untagged
@@ -2206,6 +2338,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
   m_EdgeRadius: 0
+--- !u!114 &461661906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 461661900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 0
+  spawnYOffset: 0
+  Rain: {fileID: 0}
 --- !u!1 &472902864 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1257737403493838, guid: 3c3c185ef18259247b08b006f997db01,
@@ -2217,15 +2363,181 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 472902864}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cedd90a81deba42edbe39ef18342291a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   background: {fileID: 16198805}
   Clouds: {fileID: 1884355822}
+  Lt: {fileID: 472902867}
   SetDelay: 20
   delay: 0
+--- !u!82 &472902866
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 472902864}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 73851f6cfdbba764b8d5526499a2801d, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &472902867
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 472902864}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 289dacb580b995e42866729f490f34cd, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 117
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &472902875 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82325863448085244, guid: 3c3c185ef18259247b08b006f997db01,
+    type: 2}
+  m_PrefabInternal: {fileID: 272220130}
 --- !u!1 &497089120
 GameObject:
   m_ObjectHideFlags: 0
@@ -2238,6 +2550,7 @@ GameObject:
   - component: {fileID: 497089124}
   - component: {fileID: 497089123}
   - component: {fileID: 497089122}
+  - component: {fileID: 497089126}
   m_Layer: 10
   m_Name: sky10 (1)
   m_TagString: Untagged
@@ -2360,6 +2673,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &497089126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 497089120}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &625300555
 GameObject:
   m_ObjectHideFlags: 0
@@ -2579,6 +2906,7 @@ GameObject:
   - component: {fileID: 635037615}
   - component: {fileID: 635037614}
   - component: {fileID: 635037616}
+  - component: {fileID: 635037617}
   m_Layer: 10
   m_Name: sky6
   m_TagString: Untagged
@@ -2701,6 +3029,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
   m_EdgeRadius: 0
+--- !u!114 &635037617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 635037611}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &645430372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2713,6 +3055,7 @@ GameObject:
   - component: {fileID: 645430376}
   - component: {fileID: 645430375}
   - component: {fileID: 645430374}
+  - component: {fileID: 645430378}
   m_Layer: 10
   m_Name: sky11 (2)
   m_TagString: Untagged
@@ -2835,6 +3178,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &645430378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 645430372}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &685920245
 GameObject:
   m_ObjectHideFlags: 0
@@ -2931,6 +3288,7 @@ GameObject:
   - component: {fileID: 767780634}
   - component: {fileID: 767780633}
   - component: {fileID: 767780632}
+  - component: {fileID: 767780636}
   m_Layer: 10
   m_Name: sky7 (1)
   m_TagString: Untagged
@@ -3053,6 +3411,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &767780636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 767780630}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &772390193
 GameObject:
   m_ObjectHideFlags: 0
@@ -3065,6 +3437,7 @@ GameObject:
   - component: {fileID: 772390197}
   - component: {fileID: 772390196}
   - component: {fileID: 772390198}
+  - component: {fileID: 772390199}
   m_Layer: 10
   m_Name: sky10
   m_TagString: Untagged
@@ -3187,6 +3560,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
   m_EdgeRadius: 0
+--- !u!114 &772390199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 772390193}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &802113390 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1052875097311090, guid: f60bad48c9f0ed340b2eb9df3c7c3600,
@@ -3284,6 +3671,7 @@ GameObject:
   - component: {fileID: 810347501}
   - component: {fileID: 810347500}
   - component: {fileID: 810347499}
+  - component: {fileID: 810347503}
   m_Layer: 10
   m_Name: sky10 (2)
   m_TagString: Untagged
@@ -3406,6 +3794,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &810347503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 810347497}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &840677702
 GameObject:
   m_ObjectHideFlags: 0
@@ -3527,6 +3929,7 @@ GameObject:
   - component: {fileID: 946961440}
   - component: {fileID: 946961439}
   - component: {fileID: 946961438}
+  - component: {fileID: 946961442}
   m_Layer: 10
   m_Name: sky6 (1)
   m_TagString: Untagged
@@ -3649,6 +4052,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &946961442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 946961436}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &965257695
 GameObject:
   m_ObjectHideFlags: 0
@@ -3795,6 +4212,7 @@ GameObject:
   - component: {fileID: 1073563527}
   - component: {fileID: 1073563526}
   - component: {fileID: 1073563528}
+  - component: {fileID: 1073563529}
   m_Layer: 10
   m_Name: sky8
   m_TagString: Untagged
@@ -3917,6 +4335,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
   m_EdgeRadius: 0
+--- !u!114 &1073563529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1073563523}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &1180314212
 GameObject:
   m_ObjectHideFlags: 0
@@ -3929,6 +4361,7 @@ GameObject:
   - component: {fileID: 1180314216}
   - component: {fileID: 1180314215}
   - component: {fileID: 1180314217}
+  - component: {fileID: 1180314218}
   m_Layer: 10
   m_Name: sky7
   m_TagString: Untagged
@@ -4051,6 +4484,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
   m_EdgeRadius: 0
+--- !u!114 &1180314218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1180314212}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &1212000553
 GameObject:
   m_ObjectHideFlags: 0
@@ -4063,6 +4510,7 @@ GameObject:
   - component: {fileID: 1212000557}
   - component: {fileID: 1212000556}
   - component: {fileID: 1212000555}
+  - component: {fileID: 1212000559}
   m_Layer: 10
   m_Name: sky9 (1)
   m_TagString: Untagged
@@ -4185,6 +4633,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1212000559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1212000553}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &1282831849
 GameObject:
   m_ObjectHideFlags: 0
@@ -4197,6 +4659,7 @@ GameObject:
   - component: {fileID: 1282831853}
   - component: {fileID: 1282831852}
   - component: {fileID: 1282831851}
+  - component: {fileID: 1282831855}
   m_Layer: 10
   m_Name: sky8 (2)
   m_TagString: Untagged
@@ -4319,6 +4782,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1282831855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1282831849}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &1350535606
 GameObject:
   m_ObjectHideFlags: 0
@@ -4397,6 +4874,7 @@ GameObject:
   - component: {fileID: 1487180281}
   - component: {fileID: 1487180280}
   - component: {fileID: 1487180282}
+  - component: {fileID: 1487180283}
   m_Layer: 10
   m_Name: sky9
   m_TagString: Untagged
@@ -4519,6 +4997,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
   m_EdgeRadius: 0
+--- !u!114 &1487180283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1487180277}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &1502536156
 GameObject:
   m_ObjectHideFlags: 0
@@ -4665,6 +5157,7 @@ GameObject:
   - component: {fileID: 1519100547}
   - component: {fileID: 1519100546}
   - component: {fileID: 1519100545}
+  - component: {fileID: 1519100549}
   m_Layer: 10
   m_Name: sky7 (2)
   m_TagString: Untagged
@@ -4787,6 +5280,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1519100549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1519100543}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &1581050258
 GameObject:
   m_ObjectHideFlags: 0
@@ -4799,6 +5306,7 @@ GameObject:
   - component: {fileID: 1581050262}
   - component: {fileID: 1581050261}
   - component: {fileID: 1581050260}
+  - component: {fileID: 1581050264}
   m_Layer: 10
   m_Name: sky9 (2)
   m_TagString: Untagged
@@ -4921,6 +5429,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1581050264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1581050258}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &1594234074
 GameObject:
   m_ObjectHideFlags: 0
@@ -5268,6 +5790,11 @@ Prefab:
       propertyPath: DeathSound
       value: 
       objectReference: {fileID: 354673145}
+    - target: {fileID: 114537623180796856, guid: 7ff22391d1129d9498054bfdcaafbc1a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ff22391d1129d9498054bfdcaafbc1a, type: 2}
   m_IsPrefabParent: 0
@@ -5341,6 +5868,7 @@ GameObject:
   - component: {fileID: 1885531013}
   - component: {fileID: 1885531012}
   - component: {fileID: 1885531014}
+  - component: {fileID: 1885531015}
   m_Layer: 10
   m_Name: sky12
   m_TagString: Untagged
@@ -5463,6 +5991,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
   m_EdgeRadius: 0
+--- !u!114 &1885531015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1885531009}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &1896496808
 GameObject:
   m_ObjectHideFlags: 0
@@ -5559,6 +6101,7 @@ GameObject:
   - component: {fileID: 1908195869}
   - component: {fileID: 1908195868}
   - component: {fileID: 1908195867}
+  - component: {fileID: 1908195871}
   m_Layer: 10
   m_Name: sky13 (2)
   m_TagString: Untagged
@@ -5681,6 +6224,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1908195871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1908195865}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &1928302627
 GameObject:
   m_ObjectHideFlags: 0
@@ -5693,6 +6250,7 @@ GameObject:
   - component: {fileID: 1928302631}
   - component: {fileID: 1928302630}
   - component: {fileID: 1928302629}
+  - component: {fileID: 1928302633}
   m_Layer: 10
   m_Name: sky8 (1)
   m_TagString: Untagged
@@ -5815,6 +6373,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1928302633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1928302627}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f7121ad2ea643a8da87ced65cd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chance: 10
+  spawnYOffset: 5
+  Rain: {fileID: 1596850766189268, guid: af45201f4abaf4b19a20ed3763df9f9d, type: 2}
 --- !u!1 &2002669283
 GameObject:
   m_ObjectHideFlags: 0
