@@ -9,6 +9,7 @@ public class GunBehaviour : MonoBehaviour, IPlayer {
     public float PitchRate;
     public float DeadThreshold;
 
+	public GameObject GlobalCounter;
     public GameObject BulletSpawnPoint;
     public GameObject BulletPrefab;
     public float FireRate;
@@ -17,7 +18,7 @@ public class GunBehaviour : MonoBehaviour, IPlayer {
     public int TotalAmmo;
     private int m_currentAmmo;
 
-    private Rigidbody2D m_rigidbody2D;
+    //private Rigidbody2D m_rigidbody2D;
     private Animator m_animator;
     private bool m_flip;
     private float m_direction;
@@ -25,7 +26,7 @@ public class GunBehaviour : MonoBehaviour, IPlayer {
 
     // Use this for initialization
     void Start () {
-        m_rigidbody2D = GetComponent<Rigidbody2D>();
+        //m_rigidbody2D = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();
         m_flip = false;
         m_currentAmmo = TotalAmmo;
@@ -114,6 +115,7 @@ public class GunBehaviour : MonoBehaviour, IPlayer {
                     GameObject obj = (GameObject)Instantiate(BulletPrefab, BulletSpawnPoint.transform.position, transform.rotation);
                     obj.GetComponent<IBullet>().SetSpawnedBy(this.gameObject);
                     obj.GetComponent<IBullet>().SetTravelProperties(transform.eulerAngles.z, BulletSpeed);
+					obj.transform.parent = GlobalCounter.transform;
 
                     Collider2D[] colliders = obj.GetComponents<Collider2D>();
                     foreach (Collider2D col in colliders)

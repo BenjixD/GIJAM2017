@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 7
+  serializedVersion: 8
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -25,6 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 3
+  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -41,7 +42,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 7
+  serializedVersion: 11
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -53,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 4
+    serializedVersion: 9
     m_Resolution: 2
     m_BakeResolution: 40
     m_TextureWidth: 1024
@@ -66,13 +67,27 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_DirectLightInLightProbes: 1
     m_FinalGather: 0
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
+    m_MixedBakeMode: 1
+    m_BakeBackend: 0
+    m_PVRSampling: 1
+    m_PVRDirectSampleCount: 32
+    m_PVRSampleCount: 500
+    m_PVRBounces: 2
+    m_PVRFiltering: 0
+    m_PVRFilteringMode: 1
+    m_PVRCulling: 1
+    m_PVRFilteringGaussRadiusDirect: 1
+    m_PVRFilteringGaussRadiusIndirect: 5
+    m_PVRFilteringGaussRadiusAO: 2
+    m_PVRFilteringAtrousColorSigma: 1
+    m_PVRFilteringAtrousNormalSigma: 1
+    m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 0}
-  m_RuntimeCPUUsage: 25
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -89,6 +104,8 @@ NavMeshSettings:
     minRegionArea: 2
     manualCellSize: 0
     cellSize: 0.16666667
+    manualTileSize: 0
+    tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1 &8118540
@@ -103,7 +120,7 @@ GameObject:
   - component: {fileID: 8118544}
   - component: {fileID: 8118543}
   - component: {fileID: 8118542}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky12 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,9 +151,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!114 &8118543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,11 +228,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: 246b92ff87acf462dba5f5a6a9ac4df0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &14463151
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,7 +252,7 @@ GameObject:
   - component: {fileID: 14463155}
   - component: {fileID: 14463154}
   - component: {fileID: 14463153}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky13 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,9 +283,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!114 &14463154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,11 +360,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 12
   m_Sprite: {fileID: 21300000, guid: a1f333ba1b7a541ba8b7a1475e2f1052, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &22176425
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +403,7 @@ MonoBehaviour:
   Clouds: {fileID: 1884355822}
   leftBoundary: {fileID: 2123476990}
   rightBoundary: {fileID: 73276907}
+  GlobalCounter: {fileID: 312785304}
 --- !u!4 &22176427
 Transform:
   m_ObjectHideFlags: 0
@@ -361,7 +415,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &67064876
 GameObject:
@@ -375,7 +429,7 @@ GameObject:
   - component: {fileID: 67064880}
   - component: {fileID: 67064879}
   - component: {fileID: 67064881}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,11 +466,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 255ed947b84744737805802220b569b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &67064878
 Transform:
   m_ObjectHideFlags: 0
@@ -474,9 +535,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!1 &73276907
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,11 +573,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 73276907}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.78, y: 0.060000002, z: 0}
+  m_LocalPosition: {x: 58.18, y: 0.060000002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &73276909
 BoxCollider2D:
@@ -518,9 +590,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 60}
+  m_EdgeRadius: 0
 --- !u!114 &73276910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,7 +627,7 @@ GameObject:
   m_Component:
   - component: {fileID: 125943588}
   - component: {fileID: 125943587}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -581,11 +664,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f3bf7af438d6d48df91165010e7291c1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &125943588
 Transform:
   m_ObjectHideFlags: 0
@@ -597,7 +687,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &159773707
 GameObject:
@@ -611,7 +701,7 @@ GameObject:
   - component: {fileID: 159773711}
   - component: {fileID: 159773710}
   - component: {fileID: 159773709}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky6 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -642,9 +732,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!114 &159773710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,11 +809,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: c90eb65d3fc6b48048da3cd78c4c0f80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &211444785
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,7 +830,7 @@ GameObject:
   m_Component:
   - component: {fileID: 211444787}
   - component: {fileID: 211444786}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,11 +867,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 57f1af6547fa6471780e74869477faf7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &211444787
 Transform:
   m_ObjectHideFlags: 0
@@ -775,7 +890,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &244987678
 GameObject:
@@ -789,7 +904,7 @@ GameObject:
   - component: {fileID: 244987682}
   - component: {fileID: 244987681}
   - component: {fileID: 244987680}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky3 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -820,9 +935,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!114 &244987681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -886,11 +1012,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 562a0a759c3a945999df6d5e45150c11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &247224275
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,7 +1036,7 @@ GameObject:
   - component: {fileID: 247224279}
   - component: {fileID: 247224278}
   - component: {fileID: 247224277}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -934,9 +1067,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!114 &247224278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1000,11 +1144,59 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 562a0a759c3a945999df6d5e45150c11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+--- !u!1 &312785304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 312785306}
+  - component: {fileID: 312785305}
+  m_Layer: 0
+  m_Name: GlobalCounter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &312785305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 312785304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d3c7e35b4e04b549cda2cc80dcef14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalBullets: 0
+--- !u!4 &312785306
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 312785304}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.056699768, y: -0.072360516, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &324052832
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,7 +1209,7 @@ GameObject:
   - component: {fileID: 324052836}
   - component: {fileID: 324052835}
   - component: {fileID: 324052834}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky12 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1048,9 +1240,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!114 &324052835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1114,11 +1317,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: 246b92ff87acf462dba5f5a6a9ac4df0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &344738551
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,7 +1341,7 @@ GameObject:
   - component: {fileID: 344738555}
   - component: {fileID: 344738554}
   - component: {fileID: 344738556}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1168,11 +1378,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 12
   m_Sprite: {fileID: 21300000, guid: a1f333ba1b7a541ba8b7a1475e2f1052, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &344738553
 Transform:
   m_ObjectHideFlags: 0
@@ -1230,9 +1447,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!1 &346849402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,7 +1470,7 @@ GameObject:
   m_Component:
   - component: {fileID: 346849404}
   - component: {fileID: 346849403}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1279,11 +1507,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 57f1af6547fa6471780e74869477faf7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &346849404
 Transform:
   m_ObjectHideFlags: 0
@@ -1295,7 +1530,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &439695662
 GameObject:
@@ -1309,7 +1544,7 @@ GameObject:
   - component: {fileID: 439695666}
   - component: {fileID: 439695665}
   - component: {fileID: 439695664}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky11 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1340,9 +1575,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!114 &439695665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1406,11 +1652,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 255ed947b84744737805802220b569b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &461661900
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,7 +1676,7 @@ GameObject:
   - component: {fileID: 461661904}
   - component: {fileID: 461661903}
   - component: {fileID: 461661905}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1460,11 +1713,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 562a0a759c3a945999df6d5e45150c11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &461661902
 Transform:
   m_ObjectHideFlags: 0
@@ -1522,9 +1782,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!1 &497089120
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,7 +1808,7 @@ GameObject:
   - component: {fileID: 497089124}
   - component: {fileID: 497089123}
   - component: {fileID: 497089122}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky10 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1568,9 +1839,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!114 &497089123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1634,11 +1916,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 9
   m_Sprite: {fileID: 21300000, guid: d743b2c1cf8104e4b9d0095f8f5f57ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &631592672
 GameObject:
   m_ObjectHideFlags: 0
@@ -1648,7 +1937,7 @@ GameObject:
   m_Component:
   - component: {fileID: 631592674}
   - component: {fileID: 631592673}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky4 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1685,11 +1974,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 57f1af6547fa6471780e74869477faf7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &631592674
 Transform:
   m_ObjectHideFlags: 0
@@ -1701,7 +1997,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &635037611
 GameObject:
@@ -1715,7 +2011,7 @@ GameObject:
   - component: {fileID: 635037615}
   - component: {fileID: 635037614}
   - component: {fileID: 635037616}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1752,11 +2048,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: c90eb65d3fc6b48048da3cd78c4c0f80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &635037613
 Transform:
   m_ObjectHideFlags: 0
@@ -1814,9 +2117,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!1 &645430372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,7 +2143,7 @@ GameObject:
   - component: {fileID: 645430376}
   - component: {fileID: 645430375}
   - component: {fileID: 645430374}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky11 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1860,9 +2174,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!114 &645430375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1926,11 +2251,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 255ed947b84744737805802220b569b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &685920245
 GameObject:
   m_ObjectHideFlags: 0
@@ -1940,7 +2272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 685920247}
   - component: {fileID: 685920246}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1977,11 +2309,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 7ef9adb3215294e1896c08fa9fdb03f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &685920247
 Transform:
   m_ObjectHideFlags: 0
@@ -1993,7 +2332,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &767780630
 GameObject:
@@ -2007,7 +2346,7 @@ GameObject:
   - component: {fileID: 767780634}
   - component: {fileID: 767780633}
   - component: {fileID: 767780632}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky7 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2038,9 +2377,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!114 &767780633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2104,11 +2454,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 6c525aa7979794e4b876a3ee2b0a93a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &772390193
 GameObject:
   m_ObjectHideFlags: 0
@@ -2121,7 +2478,7 @@ GameObject:
   - component: {fileID: 772390197}
   - component: {fileID: 772390196}
   - component: {fileID: 772390198}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2158,11 +2515,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 9
   m_Sprite: {fileID: 21300000, guid: d743b2c1cf8104e4b9d0095f8f5f57ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &772390195
 Transform:
   m_ObjectHideFlags: 0
@@ -2220,9 +2584,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!1 &810347497
 GameObject:
   m_ObjectHideFlags: 0
@@ -2235,7 +2610,7 @@ GameObject:
   - component: {fileID: 810347501}
   - component: {fileID: 810347500}
   - component: {fileID: 810347499}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky10 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2266,9 +2641,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!114 &810347500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2332,11 +2718,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 9
   m_Sprite: {fileID: 21300000, guid: d743b2c1cf8104e4b9d0095f8f5f57ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1001 &814909208
 Prefab:
   m_ObjectHideFlags: 0
@@ -2374,8 +2767,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4949168561995902, guid: 59c6d13ab0693423aa13bcba58aa1979, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114194746979402798, guid: 59c6d13ab0693423aa13bcba58aa1979,
+        type: 2}
+      propertyPath: CurrentPlayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114194746979402798, guid: 59c6d13ab0693423aa13bcba58aa1979,
+        type: 2}
+      propertyPath: GlobalCounter
+      value: 
+      objectReference: {fileID: 312785304}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 59c6d13ab0693423aa13bcba58aa1979, type: 2}
   m_IsPrefabParent: 0
@@ -2391,7 +2794,7 @@ GameObject:
   - component: {fileID: 946961440}
   - component: {fileID: 946961439}
   - component: {fileID: 946961438}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky6 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2422,9 +2825,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!114 &946961439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2488,11 +2902,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: c90eb65d3fc6b48048da3cd78c4c0f80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &965257695
 GameObject:
   m_ObjectHideFlags: 0
@@ -2505,7 +2926,7 @@ GameObject:
   - component: {fileID: 965257699}
   - component: {fileID: 965257698}
   - component: {fileID: 965257697}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky5 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2536,9 +2957,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!114 &965257698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2602,11 +3034,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 7cde4424039e146cfa2020a9d17f2e96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &1073563523
 GameObject:
   m_ObjectHideFlags: 0
@@ -2619,7 +3058,7 @@ GameObject:
   - component: {fileID: 1073563527}
   - component: {fileID: 1073563526}
   - component: {fileID: 1073563528}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2656,11 +3095,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: ad1f2e3df4ee34844a0cedd044f3893d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &1073563525
 Transform:
   m_ObjectHideFlags: 0
@@ -2718,9 +3164,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!1 &1180314212
 GameObject:
   m_ObjectHideFlags: 0
@@ -2733,7 +3190,7 @@ GameObject:
   - component: {fileID: 1180314216}
   - component: {fileID: 1180314215}
   - component: {fileID: 1180314217}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2770,11 +3227,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 6c525aa7979794e4b876a3ee2b0a93a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &1180314214
 Transform:
   m_ObjectHideFlags: 0
@@ -2832,9 +3296,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!1 &1205617725
 GameObject:
   m_ObjectHideFlags: 0
@@ -2905,6 +3380,8 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
+  m_AllowMSAA: 1
+  m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
@@ -2920,7 +3397,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1212000553
 GameObject:
@@ -2934,7 +3411,7 @@ GameObject:
   - component: {fileID: 1212000557}
   - component: {fileID: 1212000556}
   - component: {fileID: 1212000555}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky9 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2965,9 +3442,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!114 &1212000556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3031,11 +3519,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: 228476a8174d94135965744f6ade596a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &1282831849
 GameObject:
   m_ObjectHideFlags: 0
@@ -3048,7 +3543,7 @@ GameObject:
   - component: {fileID: 1282831853}
   - component: {fileID: 1282831852}
   - component: {fileID: 1282831851}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky8 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3079,9 +3574,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!114 &1282831852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3145,11 +3651,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: ad1f2e3df4ee34844a0cedd044f3893d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &1487180277
 GameObject:
   m_ObjectHideFlags: 0
@@ -3162,7 +3675,7 @@ GameObject:
   - component: {fileID: 1487180281}
   - component: {fileID: 1487180280}
   - component: {fileID: 1487180282}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3199,11 +3712,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: 228476a8174d94135965744f6ade596a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &1487180279
 Transform:
   m_ObjectHideFlags: 0
@@ -3261,9 +3781,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!1 &1502536156
 GameObject:
   m_ObjectHideFlags: 0
@@ -3276,7 +3807,7 @@ GameObject:
   - component: {fileID: 1502536160}
   - component: {fileID: 1502536159}
   - component: {fileID: 1502536161}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3313,11 +3844,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 7cde4424039e146cfa2020a9d17f2e96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &1502536158
 Transform:
   m_ObjectHideFlags: 0
@@ -3375,9 +3913,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!1 &1519100543
 GameObject:
   m_ObjectHideFlags: 0
@@ -3390,7 +3939,7 @@ GameObject:
   - component: {fileID: 1519100547}
   - component: {fileID: 1519100546}
   - component: {fileID: 1519100545}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky7 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3421,9 +3970,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!114 &1519100546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3487,11 +4047,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 6c525aa7979794e4b876a3ee2b0a93a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &1581050258
 GameObject:
   m_ObjectHideFlags: 0
@@ -3504,7 +4071,7 @@ GameObject:
   - component: {fileID: 1581050262}
   - component: {fileID: 1581050261}
   - component: {fileID: 1581050260}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky9 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3535,9 +4102,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!114 &1581050261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3601,11 +4179,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: 228476a8174d94135965744f6ade596a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &1594234074
 GameObject:
   m_ObjectHideFlags: 0
@@ -3618,7 +4203,7 @@ GameObject:
   - component: {fileID: 1594234078}
   - component: {fileID: 1594234077}
   - component: {fileID: 1594234076}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky5 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3649,9 +4234,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!114 &1594234077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3715,11 +4311,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 7cde4424039e146cfa2020a9d17f2e96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &1596240212
 GameObject:
   m_ObjectHideFlags: 0
@@ -3729,7 +4332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1596240216}
   - component: {fileID: 1596240215}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3766,11 +4369,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f3bf7af438d6d48df91165010e7291c1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &1596240216
 Transform:
   m_ObjectHideFlags: 0
@@ -3782,7 +4392,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1884355822
 GameObject:
@@ -3792,7 +4402,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1884355823}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Clouds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3840,7 +4450,7 @@ Transform:
   - {fileID: 965257696}
   - {fileID: 324052833}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1885531009
 GameObject:
@@ -3854,7 +4464,7 @@ GameObject:
   - component: {fileID: 1885531013}
   - component: {fileID: 1885531012}
   - component: {fileID: 1885531014}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3891,11 +4501,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: 246b92ff87acf462dba5f5a6a9ac4df0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &1885531011
 Transform:
   m_ObjectHideFlags: 0
@@ -3953,9 +4570,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!1 &1896496808
 GameObject:
   m_ObjectHideFlags: 0
@@ -3965,7 +4593,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1896496810}
   - component: {fileID: 1896496809}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4002,11 +4630,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 7ef9adb3215294e1896c08fa9fdb03f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &1896496810
 Transform:
   m_ObjectHideFlags: 0
@@ -4018,7 +4653,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1908195865
 GameObject:
@@ -4032,7 +4667,7 @@ GameObject:
   - component: {fileID: 1908195869}
   - component: {fileID: 1908195868}
   - component: {fileID: 1908195867}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky13 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4063,9 +4698,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!114 &1908195868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4129,11 +4775,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 12
   m_Sprite: {fileID: 21300000, guid: a1f333ba1b7a541ba8b7a1475e2f1052, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &1928302627
 GameObject:
   m_ObjectHideFlags: 0
@@ -4146,7 +4799,7 @@ GameObject:
   - component: {fileID: 1928302631}
   - component: {fileID: 1928302630}
   - component: {fileID: 1928302629}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky8 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4177,9 +4830,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 38.4, y: 44.010002}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 38.4, y: 44.010002}
+  m_EdgeRadius: 0
 --- !u!114 &1928302630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4243,11 +4907,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: ad1f2e3df4ee34844a0cedd044f3893d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &2002669283
 GameObject:
   m_ObjectHideFlags: 0
@@ -4257,7 +4928,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2002669285}
   - component: {fileID: 2002669284}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4294,11 +4965,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f3bf7af438d6d48df91165010e7291c1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &2002669285
 Transform:
   m_ObjectHideFlags: 0
@@ -4310,7 +4988,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2026050893
 GameObject:
@@ -4321,7 +4999,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2026050895}
   - component: {fileID: 2026050894}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sky2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4358,11 +5036,18 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 7ef9adb3215294e1896c08fa9fdb03f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &2026050895
 Transform:
   m_ObjectHideFlags: 0
@@ -4374,7 +5059,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2123476990
 GameObject:
@@ -4400,11 +5085,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2123476990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.64, y: 0, z: 0}
+  m_LocalPosition: {x: -58.04, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2123476992
 MonoBehaviour:
@@ -4431,6 +5116,17 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 60}
+  m_EdgeRadius: 0

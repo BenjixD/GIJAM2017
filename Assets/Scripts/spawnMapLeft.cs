@@ -18,13 +18,11 @@ public class spawnMapLeft : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D c){
-		Debug.Log ("hit");
 		GameObject map =(GameObject)Instantiate(c.gameObject,leftBoundary.transform.position - new Vector3(spawnOffset,0,0), leftBoundary.transform.rotation);
 		map.transform.parent = Clouds.transform;
 	}
 
 	void OnTriggerExit2D(Collider2D c){
-		Debug.Log ("left");
 		Destroy (c.gameObject);
 	}
 }
