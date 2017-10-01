@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlaneBehaviour : MonoBehaviour {
+public class PlaneBehaviour : MonoBehaviour, IPlayer {
 
     Rigidbody2D rb;
 
@@ -29,34 +29,21 @@ public class PlaneBehaviour : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButton("Switch" + (int)currentPlayer) || Input.GetAxisRaw("Switch" + (int)currentPlayer) == 1)
-        {
-            Switch();
-        }
+        //if (Input.GetButton("Switch" + (int)currentPlayer) || Input.GetAxisRaw("Switch" + (int)currentPlayer) == 1)
+        //{
+        //    Switch();
+        //}
         direction = (direction +pitchRate * Input.GetAxisRaw("Vertical" + (int)currentPlayer)) % 360;
         transform.eulerAngles = new Vector3(0,0,direction);
         float multiplier = Mathf.Sin(Mathf.Deg2Rad * direction);
         float actualSpeed = baseSpeed - gravity * (multiplier / (multiplier > 0? 2 : 1));
         rb.velocity = new Vector2(actualSpeed * Mathf.Cos(Mathf.Deg2Rad*direction), actualSpeed * Mathf.Sin(Mathf.Deg2Rad * direction));
         //TODO lerp speed instead?
+    }
 
-        SpriteRenderer indicator = IndicateSwitch.GetComponent<SpriteRenderer>();
-
-        if (Input.GetButton("Switch" + (int)currentPlayer) || Input.GetAxisRaw("Switch" + (int)currentPlayer) == 1)
-        {
-            if (!switchRequested && !indicator.enabled)
-            {
-                indicator.enabled = true;
-            }
-        }
-        else if (switchRequested && !indicator.enabled)
-        {
-            indicator.enabled = true;
-        }
-        else if (!switchRequested && indicator.enabled)
-        {
-            indicator.enabled = false;
-        }
+    public Player.Control GetPlayer()
+    {
+        return currentPlayer;
     }
 
     public void triggerDeath()
@@ -87,6 +74,7 @@ public class PlaneBehaviour : MonoBehaviour {
 
     IEnumerator SwitchOp(float delay)
     {
+        StopCoroutine(WatchForSwitchRequest());
         foreach (SpriteRenderer render in transform.GetChild(0).GetComponentsInChildren<SpriteRenderer>())
         {
             render.enabled = false;
@@ -99,6 +87,7 @@ public class PlaneBehaviour : MonoBehaviour {
         yield return new WaitForSeconds(delay);
         enabled = true;
 
+        StopCoroutine(WatchForSwitchRequest());
         foreach (SpriteRenderer render in GetComponentsInChildren<SpriteRenderer>())
         {
             render.enabled = true;
@@ -110,6 +99,7 @@ public class PlaneBehaviour : MonoBehaviour {
         SpriteRenderer indicator = IndicateSwitch.GetComponent<SpriteRenderer>();
         for (;;)
         {
+            Debug.Log(switchRequested);
             if(Input.GetButton("Switch" + (int)currentPlayer) || Input.GetAxisRaw("Switch" + (int)currentPlayer) == 1)
             {
                 if(!switchRequested && !indicator.enabled)
