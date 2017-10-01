@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunBehaviour : MonoBehaviour {
+public class GunBehaviour : MonoBehaviour, IPlayer {
 
     public Player.Control CurrentPlayer;
 
@@ -30,8 +30,7 @@ public class GunBehaviour : MonoBehaviour {
         m_flip = false;
         m_currentAmmo = TotalAmmo;
 
-        StartCoroutine(ChangeRotation());
-        StartCoroutine(Fire());
+        StartAllCoroutines();
 	}
 	
 	// Update is called once per frame
@@ -44,7 +43,12 @@ public class GunBehaviour : MonoBehaviour {
         {
             transform.root.GetComponent<PlaneBehaviour>().setSwitchRequested(false);
         }
-	}
+    }
+
+    public Player.Control GetPlayer()
+    {
+        return CurrentPlayer;
+    }
 
     IEnumerator ChangeRotation()
     {
@@ -137,13 +141,18 @@ public class GunBehaviour : MonoBehaviour {
         StartCoroutine(SwitchOp(delay, newplayer));
     }
 
+    public void StartAllCoroutines()
+    {
+        StartCoroutine(ChangeRotation());
+        StartCoroutine(Fire());
+    }
+
     IEnumerator SwitchOp(float delay, Player.Control newplayer)
     {
         //m_animator.setTrigger("Transformers robots in disguise");
         yield return new WaitForSeconds(delay);
         CurrentPlayer = newplayer;
         m_currentAmmo = TotalAmmo;
-        StartCoroutine(ChangeRotation());
-        StartCoroutine(Fire());
+        StartAllCoroutines();
     }
 }

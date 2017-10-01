@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlaneBehaviour : MonoBehaviour {
+public class PlaneBehaviour : MonoBehaviour, IPlayer {
 
     Rigidbody2D rb;
 
@@ -13,7 +13,11 @@ public class PlaneBehaviour : MonoBehaviour {
 
     // gravity is the speed additive before being modified by direction
     public float baseSpeed, pitchRate, gravity;
+    public bool flip;
+
     float direction;
+    bool isAileron;
+
 
     Animator m_anim;
     
@@ -22,23 +26,34 @@ public class PlaneBehaviour : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         direction = transform.rotation.eulerAngles.z;
         switchRequested = false;
+        isAileron = false;
         m_anim = GetComponent<Animator>();
 
-        //StartCoroutine(WatchForSwitchRequest());
+
+        StartCoroutine(WatchForSwitchRequest());
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButton("Switch" + (int)currentPlayer) || Input.GetAxisRaw("Switch" + (int)currentPlayer) != 0)
+        if (Input.GetButtonDown("Flip" + (int)currentPlayer) && !isAileron)
+        {
+            StartCoroutine(Aileron());
+        }
+        else if (Input.GetButton("Switch" + (int)currentPlayer) || Input.GetAxisRaw("Switch" + (int)currentPlayer) != 0)
         {
             Switch();
         }
-        direction = (direction +pitchRate * Input.GetAxisRaw("Vertical" + (int)currentPlayer)) % 360;
+        direction = (direction +pitchRate * (flip? -1:1) * Input.GetAxisRaw("Vertical" + (int)currentPlayer)) % 360;
         transform.eulerAngles = new Vector3(0,0,direction);
         float multiplier = Mathf.Sin(Mathf.Deg2Rad * direction);
         float actualSpeed = baseSpeed - gravity * (multiplier / (multiplier > 0? 2 : 1));
         rb.velocity = new Vector2(actualSpeed * Mathf.Cos(Mathf.Deg2Rad*direction), actualSpeed * Mathf.Sin(Mathf.Deg2Rad * direction));
         //TODO lerp speed instead?
+    }
+
+    public Player.Control GetPlayer()
+    {
+        return currentPlayer;
     }
 
     public void triggerDeath()
@@ -65,13 +80,13 @@ public class PlaneBehaviour : MonoBehaviour {
         m_anim.SetTrigger("reloading");
 
         enabled = false;
-        switchRequested = false;
         StartCoroutine(SwitchOp(1f));
         
     }
 
     IEnumerator SwitchOp(float delay)
     {
+        StopCoroutine(WatchForSwitchRequest());
         foreach (SpriteRenderer render in transform.GetChild(0).GetComponentsInChildren<SpriteRenderer>())
         {
             render.enabled = false;
@@ -82,9 +97,11 @@ public class PlaneBehaviour : MonoBehaviour {
         gun.Switch(delay, currentPlayer);
         currentPlayer = gunplayer;
         GameObject.Find("Main Camera").GetComponent<MatchManager>().faceswap(gameObject);
+        switchRequested = false;
         yield return new WaitForSeconds(delay);
         enabled = true;
 
+        //StopCoroutine(WatchForSwitchRequest());
         foreach (SpriteRenderer render in GetComponentsInChildren<SpriteRenderer>())
         {
             render.enabled = true;
@@ -102,6 +119,10 @@ public class PlaneBehaviour : MonoBehaviour {
                 {
                     indicator.enabled = true;
                 }
+                else if(switchRequested && indicator.enabled)
+                {
+                    indicator.enabled = false;
+                }
             }
             else if (switchRequested && !indicator.enabled)
             {
@@ -114,5 +135,37 @@ public class PlaneBehaviour : MonoBehaviour {
 
             yield return new WaitForFixedUpdate();
         }
+    }
+
+    IEnumerator Aileron()
+    {
+        StopCoroutine(WatchForSwitchRequest());
+        isAileron = true;
+        foreach (SpriteRenderer render in transform.GetChild(0).GetComponentsInChildren<SpriteRenderer>())
+        {
+            render.enabled = false;
+        }
+
+        GunBehaviour gun = GetComponentInChildren<GunBehaviour>();
+        gun.StopAllCoroutines();
+
+        m_anim.SetTrigger("aileron");
+
+        yield return new WaitForSeconds(0.5f);
+        //Flip
+        flip = !flip;
+        transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
+
+        //Finish last half
+        yield return new WaitForSeconds(0.5f);
+
+        //StartCoroutine(WatchForSwitchRequest());
+        foreach (SpriteRenderer render in GetComponentsInChildren<SpriteRenderer>())
+        {
+            render.enabled = true;
+        }
+
+        isAileron = false;
+        yield return null;
     }
 }
