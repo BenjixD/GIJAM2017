@@ -397,6 +397,11 @@ Prefab:
     - target: {fileID: 212529229364937430, guid: 59c6d13ab0693423aa13bcba58aa1979,
         type: 2}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212529229364937430, guid: 59c6d13ab0693423aa13bcba58aa1979,
+        type: 2}
+      propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -17,10 +17,10 @@ public class TeamManager : MonoBehaviour {
 
     void Update()
     {
-        if((Input.GetButton("Switch" + (int)m_player1.GetPlayer()) || Input.GetAxisRaw("Switch" + (int)m_player1.GetPlayer()) == 1) &&
-           (Input.GetButton("Switch" + (int)m_player2.GetPlayer()) || Input.GetAxisRaw("Switch" + (int)m_player2.GetPlayer()) == 1))
-        {
-            Debug.Log("SWAP");
-        }
+        //if((Input.GetButton("Switch" + (int)m_player1.GetPlayer()) || Input.GetAxisRaw("Switch" + (int)m_player1.GetPlayer()) == 1) &&
+        //   (Input.GetButton("Switch" + (int)m_player2.GetPlayer()) || Input.GetAxisRaw("Switch" + (int)m_player2.GetPlayer()) == 1))
+        //{
+        //    Debug.Log("SWAP");
+        //}
     }
 }

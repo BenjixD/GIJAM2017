@@ -36,15 +36,15 @@ public class GunBehaviour : MonoBehaviour, IPlayer {
 	
 	// Update is called once per frame
 	void Update () {
-        //if (Input.GetButtonDown("Switch" + (int)CurrentPlayer) || Input.GetAxisRaw("Switch" + (int)CurrentPlayer) == 1)
-        //{
-        //    transform.root.GetComponent<PlaneBehaviour>().setSwitchRequested(true);
-        //}
-        //else if (Input.GetButtonUp("Switch" + (int)CurrentPlayer) || Input.GetAxisRaw("Switch" + (int)CurrentPlayer) == 0)
-        //{
-        //    transform.root.GetComponent<PlaneBehaviour>().setSwitchRequested(false);
-        //}
-	}
+        if (Input.GetButtonDown("Switch" + (int)CurrentPlayer) || Input.GetAxisRaw("Switch" + (int)CurrentPlayer) == 1)
+        {
+            transform.root.GetComponent<PlaneBehaviour>().setSwitchRequested(true);
+        }
+        else if (Input.GetButtonUp("Switch" + (int)CurrentPlayer) || Input.GetAxisRaw("Switch" + (int)CurrentPlayer) == 0)
+        {
+            transform.root.GetComponent<PlaneBehaviour>().setSwitchRequested(false);
+        }
+    }
 
     public Player.Control GetPlayer()
     {

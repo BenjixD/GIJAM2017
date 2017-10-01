@@ -24,7 +24,7 @@ public class PlaneBehaviour : MonoBehaviour, IPlayer {
         switchRequested = false;
         m_anim = GetComponent<Animator>();
 
-        //StartCoroutine(WatchForSwitchRequest());
+        StartCoroutine(WatchForSwitchRequest());
 	}
 	
 	// Update is called once per frame
@@ -70,7 +70,6 @@ public class PlaneBehaviour : MonoBehaviour, IPlayer {
         m_anim.SetTrigger("reloading");
 
         enabled = false;
-        switchRequested = false;
         StartCoroutine(SwitchOp(1f));
         
     }
@@ -87,6 +86,7 @@ public class PlaneBehaviour : MonoBehaviour, IPlayer {
         Player.Control gunplayer = gun.CurrentPlayer;
         gun.Switch(delay, currentPlayer);
         currentPlayer = gunplayer;
+        switchRequested = false;
         yield return new WaitForSeconds(delay);
         enabled = true;
 
@@ -109,12 +109,16 @@ public class PlaneBehaviour : MonoBehaviour, IPlayer {
                 {
                     indicator.enabled = true;
                 }
+                else if(switchRequested && indicator.enabled)
+                {
+                    indicator.enabled = false;
+                }
             }
             else if (switchRequested && !indicator.enabled)
             {
                 indicator.enabled = true;
             }
-            else if(!switchRequested && indicator.enabled)
+            else if(!switchRequested)
             {
                 indicator.enabled = false;
             }
