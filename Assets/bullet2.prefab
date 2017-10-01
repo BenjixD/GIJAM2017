@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 114309003041185592}
   - component: {fileID: 82125219629256924}
   - component: {fileID: 58317386044410164}
-  - component: {fileID: 114953077814133048}
   m_Layer: 8
   m_Name: bullet2
   m_TagString: Untagged
@@ -172,17 +171,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 5
---- !u!114 &114953077814133048
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1618812583955866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ac65c461bc1b4448a95bf20927187fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   Life: 8
 --- !u!212 &212494492685279708
 SpriteRenderer:
@@ -213,8 +201,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1641963065
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8d17266ce5432ed459dfe88392a0ce6c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

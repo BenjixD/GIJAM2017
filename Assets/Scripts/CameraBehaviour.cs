@@ -12,6 +12,11 @@ public class CameraBehaviour : MonoBehaviour {
     public float MinSize;
     public float MaxSize;
 
+    public float MinY;
+    public float MaxY;
+    public float MinX;
+    public float MaxX;
+
     public float SmoothSpeed;
 
     private Vector3 m_averageLocation;
@@ -34,6 +39,7 @@ public class CameraBehaviour : MonoBehaviour {
     {
         for(;;)
         {
+            bool ifUpdate = true;
             Vector3 total = Vector3.zero;
             foreach(GameObject player in PlayerRefs)
             {
@@ -41,12 +47,25 @@ public class CameraBehaviour : MonoBehaviour {
                 {
                     total += player.transform.position;
                 }
+                else
+                {
+                    ifUpdate = false;
+                }
             }
 
-            m_averageLocation = total / PlayerRefs.Length;
+            if(ifUpdate)
+            {
+                m_averageLocation = total / PlayerRefs.Length;
 
-            //Set the Position
-            transform.position = new Vector3(m_averageLocation.x, m_averageLocation.y, -10);
+                //Find Camera Size
+                Vector2 topRightCorner = new Vector2(1, 1);
+                Vector2 edgeVector = Camera.main.ScreenToWorldPoint(topRightCorner) - transform.position;
+
+                //Set the Position
+                transform.position = new Vector3(Mathf.Clamp(m_averageLocation.x, MinX - edgeVector.x, MaxX + edgeVector.x),
+                                                 Mathf.Clamp(m_averageLocation.y, MinY - edgeVector.y, MaxY + edgeVector.y), -10);
+            }
+            
 
             yield return new WaitForFixedUpdate();
         }
