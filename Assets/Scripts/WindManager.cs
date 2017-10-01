@@ -38,7 +38,7 @@ public class WindManager : MonoBehaviour {
 				spriteColour.color = new Color (r, g, b , a);
 			}
 			//reset
-			GlobalCounter.GetComponent<GlobalCount>().totalBullets = 0;
+			//GlobalCounter.GetComponent<GlobalCount>().totalBullets = 0;
 		}
 
 		if (direction == "left") {
