@@ -7,6 +7,9 @@ public class MatchManager : MonoBehaviour {
 
     public GameObject[] planes, huds;
     bool[] existingPlanes;
+    public GameObject vic, team1, team2;
+    public AudioSource winmusic;
+    public float showdelay = 3;
 
 	// Use this for initialization
 	void Start () {
@@ -27,14 +30,15 @@ public class MatchManager : MonoBehaviour {
             }
             else
             {
+                Debug.Log("Status change");
                 existingPlanes[i] = false;
-                //check winner
+                checkWinner();
             }
         }
 	}
 
     void checkWinner()
-    {
+    { 
         int win = -1;
         for (int i = 0; i < existingPlanes.Length; i++){
             if (existingPlanes[i] && win < 0)
@@ -46,7 +50,8 @@ public class MatchManager : MonoBehaviour {
                 return;
             }
         }
-        Debug.Log("Plane " + win + " win");
+        StartCoroutine(winAnim(win));
+
     }
 
     public void faceswap(GameObject plane) 
@@ -65,5 +70,26 @@ public class MatchManager : MonoBehaviour {
         face2.localPosition = temp;
     }
 
+    IEnumerator winAnim(int winner)
+    {
+        foreach (AudioSource a in GetComponents<AudioSource>())
+        {
+            a.Stop();
+        }
+        this.enabled = false;
+        winmusic.Play();
+        Debug.Log("Game end");
+        yield return new WaitForSeconds(showdelay);
+        vic.SetActive(true);
+        yield return new WaitForSeconds(showdelay);
+        if (winner == 0)
+        {
+            team1.SetActive(true);
+        }
+        else if (winner == 1)
+        {
+            team2.SetActive(true);
+        }
+    }
 
 }

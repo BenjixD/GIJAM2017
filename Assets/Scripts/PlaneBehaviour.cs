@@ -21,7 +21,7 @@ public class PlaneBehaviour : MonoBehaviour, IPlayer {
 
 
     Animator m_anim;
-    public AudioSource DeathSound;
+    public AudioSource DeathSound, reload, aileron;
     
 	// Use this for initialization
 	void Start () {
@@ -100,7 +100,7 @@ public class PlaneBehaviour : MonoBehaviour, IPlayer {
         {
             render.enabled = false;
         }
-
+        reload.Play();
         GunBehaviour gun = GetComponentInChildren<GunBehaviour>();
         Player.Control gunplayer = gun.CurrentPlayer;
         gun.Switch(delay, currentPlayer);
@@ -165,6 +165,7 @@ public class PlaneBehaviour : MonoBehaviour, IPlayer {
         gun.StopAllCoroutines();
 
         m_anim.SetTrigger("aileron");
+        aileron.Play();
 
         yield return new WaitForSeconds(0.5f);
         //Flip
