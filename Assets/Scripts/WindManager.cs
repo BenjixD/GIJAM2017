@@ -23,12 +23,10 @@ public class WindManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (GlobalCounter.GetComponent<GlobalCount> ().totalBullets);
 		if (GlobalCounter.GetComponent<GlobalCount> ().totalBullets == 49) {
 			GlobalCounter.GetComponent<GlobalCount> ().totalBullets += 1;
 		}
 		if(GlobalCounter.GetComponent<GlobalCount>().totalBullets >= 50){
-			Debug.Log ("DARKEN");
 			//darken
 			foreach (Transform child in Clouds.transform) {
 				SpriteRenderer spriteColour = child.GetComponent<SpriteRenderer> ();
@@ -45,14 +43,18 @@ public class WindManager : MonoBehaviour {
 
 		if (direction == "left") {
 			foreach (Transform child in Clouds.transform) {
-				child.GetComponentsInChildren<moveClouds> ()[0].direction = -1f;
+				if (child.GetComponentsInChildren<moveClouds> ().Length > 0) {
+					child.GetComponentsInChildren<moveClouds> ()[0].direction = -1f;
+				}
 			}
 			leftBoundary.GetComponent<BoxCollider2D>().enabled  = true;
 			rightBoundary.GetComponent<BoxCollider2D>().enabled  = false;
 		
 		} else if (direction == "right") {
 			foreach (Transform child in Clouds.transform) {
-				child.GetComponentsInChildren<moveClouds> ()[0].direction = 1f;
+				if (child.GetComponentsInChildren<moveClouds> ().Length > 0) {
+					child.GetComponentsInChildren<moveClouds> () [0].direction = 1f;
+				}
 			}
 
 			leftBoundary.GetComponent<BoxCollider2D>().enabled = false;
