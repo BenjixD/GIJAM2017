@@ -380,20 +380,6 @@ Prefab:
       propertyPath: m_Name
       value: P1
       objectReference: {fileID: 0}
-    - target: {fileID: 114871317420639886, guid: 59c6d13ab0693423aa13bcba58aa1979,
-        type: 2}
-      propertyPath: currentPlayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4949168561995902, guid: 59c6d13ab0693423aa13bcba58aa1979, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114871317420639886, guid: 59c6d13ab0693423aa13bcba58aa1979,
-        type: 2}
-      propertyPath: flip
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 59c6d13ab0693423aa13bcba58aa1979, type: 2}
   m_IsPrefabParent: 0

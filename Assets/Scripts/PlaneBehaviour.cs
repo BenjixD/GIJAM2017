@@ -163,7 +163,7 @@ public class PlaneBehaviour : MonoBehaviour, IPlayer {
         {
             render.enabled = true;
         }
-
+        gun.StartAllCoroutines();
         isAileron = false;
         yield return null;
     }
