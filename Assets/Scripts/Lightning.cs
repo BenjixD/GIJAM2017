@@ -6,6 +6,7 @@ public class Lightning : MonoBehaviour {
 
 	public GameObject background;
 	public GameObject Clouds;
+    public AudioSource Lt;
 
     public float SetDelay;
 	public float delay;
@@ -14,6 +15,7 @@ public class Lightning : MonoBehaviour {
 	void Start () {
         delay = SetDelay;
         StartLightning();
+        Lt.Play();
     }
 	
 	// Update is called once per frame
