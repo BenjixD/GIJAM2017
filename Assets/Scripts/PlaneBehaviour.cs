@@ -81,6 +81,7 @@ public class PlaneBehaviour : MonoBehaviour {
         Player.Control gunplayer = gun.CurrentPlayer;
         gun.Switch(delay, currentPlayer);
         currentPlayer = gunplayer;
+        GameObject.Find("Main Camera").GetComponent<MatchManager>().faceswap(gameObject);
         yield return new WaitForSeconds(delay);
         enabled = true;
 
