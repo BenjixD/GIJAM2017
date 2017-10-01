@@ -45,26 +45,37 @@ public class Lightning : MonoBehaviour {
 		if (delay == 0) {
 			foreach (Transform child in background.transform) {
 				SpriteRenderer sprite = child.GetComponent<SpriteRenderer> ();
+				float oldCapacity;
+				Opacity o = child.GetComponent<Opacity> ();
+				if (o != null){
+					Debug.Log ("HI");
+					oldCapacity = o.oldOpacity;
+				}
+				else {
+					Debug.Log("bye");
+					oldCapacity = child.GetComponent<moveClouds> ().oldOpacity;
+				}
 				float r = sprite.color.r;
 				float g = sprite.color.g;
 				float b = sprite.color.b;
-				float a = sprite.color.a;
-				if (a > 0 && a < 1) {
-					a += (1 - 0.2f)/recoveryDelay;
-				}		
+				float a = oldCapacity;
 				sprite.color = new Color (r, g, b, a);
 			}
 
 			foreach (Transform child in Clouds.transform) {
 
 				SpriteRenderer sprite = child.GetComponent<SpriteRenderer> ();
+				float oldCapacity;
+				Opacity o = child.GetComponent<Opacity> ();
+				if (o != null) {
+					oldCapacity = o.oldOpacity;
+				} else {
+					oldCapacity = child.GetComponent<moveClouds>().oldOpacity;
+				}
 				float r = sprite.color.r;
 				float g = sprite.color.g;
 				float b = sprite.color.b;
-				float a = sprite.color.a;
-				if (a > 0 && a < 1) {
-					a += (1 - 0.2f)/recoveryDelay;
-				}
+				float a = oldCapacity;
 				sprite.color = new Color (r, g, b, a);
 			}
 		}
