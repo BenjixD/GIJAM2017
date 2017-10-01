@@ -5,8 +5,14 @@ using UnityEngine;
 public class BasicBullet : MonoBehaviour, IBullet
 {
     public float Damage;
+    public float Life;
 
     private GameObject m_spawnedBy;
+
+    void Start()
+    {
+        StartCoroutine(LifeTimer());
+    }
 
     public void SetSpawnedBy(GameObject spawner)
     {
@@ -27,15 +33,21 @@ public class BasicBullet : MonoBehaviour, IBullet
     {
         if(c.transform.root != m_spawnedBy.transform.root)
         {
+            this.transform.parent.GetComponent<GlobalCount>().totalBullets += 1;
+            StopAllCoroutines();
             Destroy(gameObject);
-			Debug.Log (this.transform.parent.GetComponent<GlobalCount> ().totalBullets);
-			this.transform.parent.GetComponent<GlobalCount> ().totalBullets += 1;
-			Debug.Log (this.transform.parent.GetComponent<GlobalCount> ().totalBullets);
         }
     }
 
-public float GetDamage()
+    public float GetDamage()
     {
         return Damage;
+    }
+
+    IEnumerator LifeTimer()
+    {
+        yield return new WaitForSeconds(Life);
+        this.transform.parent.GetComponent<GlobalCount>().totalBullets += 1;
+        Destroy(gameObject);
     }
 }

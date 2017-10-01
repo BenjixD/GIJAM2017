@@ -21,6 +21,7 @@ public class PlaneBehaviour : MonoBehaviour, IPlayer {
 
 
     Animator m_anim;
+    public AudioSource DeathSound;
     
 	// Use this for initialization
 	void Start () {
@@ -60,7 +61,15 @@ public class PlaneBehaviour : MonoBehaviour, IPlayer {
     public void triggerDeath()
     {
         //Do dying things here
-        Destroy(transform.root.gameObject, 1);
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
+
+
+        m_anim.SetTrigger("death");
+        DeathSound.Play();
+        Destroy(transform.root.gameObject, 1.0f);
     }
 
     public void setSwitchRequested(bool s)

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DespawnInTime : MonoBehaviour {
-
+public class DespawnInTime : MonoBehaviour
+{
     public float Life;
 
 	// Use this for initialization
