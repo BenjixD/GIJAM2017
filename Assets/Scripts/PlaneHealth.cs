@@ -8,8 +8,10 @@ public class PlaneHealth : MonoBehaviour {
     float health;
     PlaneBehaviour plane;
 
-	// Use this for initialization
-	void Start () {
+    public AudioSource hurt;
+
+    // Use this for initialization
+    void Start () {
         health = maxHealth;
         plane = GetComponent<PlaneBehaviour>();
 	}
@@ -20,6 +22,7 @@ public class PlaneHealth : MonoBehaviour {
         if (bult != null && bult.GetSpawnedBy().transform.root.gameObject != transform.root.gameObject)
         {
             getHurt(bult.GetDamage());
+            hurt.Play();
         }
     }
 
