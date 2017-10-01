@@ -9,5 +9,5 @@ EditorBuildSettings:
     path: Assets/Scenes/title.unity
     guid: af53947fe0bb9504a8180c179bab68d8
   - enabled: 1
-    path: Assets/Scenes/bgtest.unity
-    guid: ba55ef100df8137439a9ed5d10643767
+    path: Assets/Scenes/Stage1.unity
+    guid: 5270eae9c9d1d5346be3d0fb540ec642
