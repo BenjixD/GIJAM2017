@@ -737,6 +737,7 @@ GameObject:
   - component: {fileID: 125943588}
   - component: {fileID: 125943587}
   - component: {fileID: 125943589}
+  - component: {fileID: 125943590}
   m_Layer: 10
   m_Name: sky1 (1)
   m_TagString: Untagged
@@ -811,6 +812,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oldOpacity: 0
+--- !u!114 &125943590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 125943586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 590796c351236044bab7e7ab87accd78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Counter: {fileID: 312785305}
+  TargetColor: {r: 1, g: 0.32941177, b: 0.32941177, a: 1}
 --- !u!1 &159773707
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,6 +969,7 @@ GameObject:
   - component: {fileID: 211444787}
   - component: {fileID: 211444786}
   - component: {fileID: 211444788}
+  - component: {fileID: 211444789}
   m_Layer: 10
   m_Name: sky4
   m_TagString: Untagged
@@ -1029,6 +1044,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oldOpacity: 0
+--- !u!114 &211444789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 211444785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 590796c351236044bab7e7ab87accd78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Counter: {fileID: 312785305}
+  TargetColor: {r: 1, g: 0.32941177, b: 0.32941177, a: 1}
 --- !u!1 &244987678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1737,6 +1765,7 @@ GameObject:
   - component: {fileID: 346849404}
   - component: {fileID: 346849403}
   - component: {fileID: 346849405}
+  - component: {fileID: 346849406}
   m_Layer: 10
   m_Name: sky4 (1)
   m_TagString: Untagged
@@ -1811,6 +1840,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oldOpacity: 0
+--- !u!114 &346849406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 346849402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 590796c351236044bab7e7ab87accd78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Counter: {fileID: 312785305}
+  TargetColor: {r: 1, g: 0.32941177, b: 0.32941177, a: 1}
 --- !u!1 &354673144 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1665303019288538, guid: 7ff22391d1129d9498054bfdcaafbc1a,
@@ -2437,6 +2479,7 @@ GameObject:
   - component: {fileID: 631592674}
   - component: {fileID: 631592673}
   - component: {fileID: 631592675}
+  - component: {fileID: 631592676}
   m_Layer: 10
   m_Name: sky4 (2)
   m_TagString: Untagged
@@ -2511,6 +2554,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oldOpacity: 0
+--- !u!114 &631592676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 631592672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 590796c351236044bab7e7ab87accd78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Counter: {fileID: 312785305}
+  TargetColor: {r: 1, g: 0.32941177, b: 0.32941177, a: 1}
 --- !u!1 &635037611
 GameObject:
   m_ObjectHideFlags: 0
@@ -5009,6 +5065,7 @@ GameObject:
   - component: {fileID: 1596240216}
   - component: {fileID: 1596240215}
   - component: {fileID: 1596240213}
+  - component: {fileID: 1596240214}
   m_Layer: 10
   m_Name: sky1
   m_TagString: Untagged
@@ -5028,6 +5085,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oldOpacity: 0
+--- !u!114 &1596240214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1596240212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 590796c351236044bab7e7ab87accd78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Counter: {fileID: 312785305}
+  TargetColor: {r: 1, g: 0.32941177, b: 0.32941177, a: 1}
 --- !u!212 &1596240215
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5755,6 +5825,7 @@ GameObject:
   - component: {fileID: 2002669285}
   - component: {fileID: 2002669284}
   - component: {fileID: 2002669286}
+  - component: {fileID: 2002669287}
   m_Layer: 10
   m_Name: sky1 (2)
   m_TagString: Untagged
@@ -5829,6 +5900,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oldOpacity: 0
+--- !u!114 &2002669287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2002669283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 590796c351236044bab7e7ab87accd78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Counter: {fileID: 312785305}
+  TargetColor: {r: 1, g: 0.32941177, b: 0.32941177, a: 1}
 --- !u!1 &2026050893
 GameObject:
   m_ObjectHideFlags: 0
