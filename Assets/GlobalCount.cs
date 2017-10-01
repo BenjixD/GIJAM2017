@@ -7,7 +7,7 @@ public class GlobalCount : MonoBehaviour {
 	public int totalBullets;
 	// Use this for initialization
 	void Start () {
-		totalBullets = 49;
+		totalBullets = 0;
 	}
 	
 	// Update is called once per frame
