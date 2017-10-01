@@ -184,20 +184,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1545907536529176, guid: 59c6d13ab0693423aa13bcba58aa1979,
     type: 2}
   m_PrefabInternal: {fileID: 1364556130}
---- !u!114 &594531041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 594531040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 402236dd787f2c740aa4179cdf57562a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Players:
-  - {fileID: 594531040}
-  - {fileID: 2140675029}
 --- !u!1 &935015041
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,14 +380,18 @@ Prefab:
       propertyPath: m_Name
       value: P1
       objectReference: {fileID: 0}
-    - target: {fileID: 212529229364937430, guid: 59c6d13ab0693423aa13bcba58aa1979,
+    - target: {fileID: 114871317420639886, guid: 59c6d13ab0693423aa13bcba58aa1979,
         type: 2}
-      propertyPath: m_Enabled
+      propertyPath: currentPlayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949168561995902, guid: 59c6d13ab0693423aa13bcba58aa1979, type: 2}
+      propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 212529229364937430, guid: 59c6d13ab0693423aa13bcba58aa1979,
+    - target: {fileID: 114871317420639886, guid: 59c6d13ab0693423aa13bcba58aa1979,
         type: 2}
-      propertyPath: m_WasSpriteAssigned
+      propertyPath: flip
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -523,8 +513,3 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 59c6d13ab0693423aa13bcba58aa1979, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &2140675029 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1177308701997294, guid: 59c6d13ab0693423aa13bcba58aa1979,
-    type: 2}
-  m_PrefabInternal: {fileID: 1364556130}

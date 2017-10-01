@@ -13,7 +13,11 @@ public class PlaneBehaviour : MonoBehaviour, IPlayer {
 
     // gravity is the speed additive before being modified by direction
     public float baseSpeed, pitchRate, gravity;
+    public bool flip;
+
     float direction;
+    bool isAileron;
+
 
     Animator m_anim;
     
@@ -22,18 +26,24 @@ public class PlaneBehaviour : MonoBehaviour, IPlayer {
         rb = GetComponent<Rigidbody2D>();
         direction = transform.rotation.eulerAngles.z;
         switchRequested = false;
+        isAileron = false;
         m_anim = GetComponent<Animator>();
+
 
         StartCoroutine(WatchForSwitchRequest());
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButton("Switch" + (int)currentPlayer) || Input.GetAxisRaw("Switch" + (int)currentPlayer) != 0)
+        if (Input.GetButtonDown("Flip" + (int)currentPlayer) && !isAileron)
+        {
+            StartCoroutine(Aileron());
+        }
+        else if (Input.GetButton("Switch" + (int)currentPlayer) || Input.GetAxisRaw("Switch" + (int)currentPlayer) != 0)
         {
             Switch();
         }
-        direction = (direction +pitchRate * Input.GetAxisRaw("Vertical" + (int)currentPlayer)) % 360;
+        direction = (direction +pitchRate * (flip? -1:1) * Input.GetAxisRaw("Vertical" + (int)currentPlayer)) % 360;
         transform.eulerAngles = new Vector3(0,0,direction);
         float multiplier = Mathf.Sin(Mathf.Deg2Rad * direction);
         float actualSpeed = baseSpeed - gravity * (multiplier / (multiplier > 0? 2 : 1));
@@ -90,7 +100,7 @@ public class PlaneBehaviour : MonoBehaviour, IPlayer {
         yield return new WaitForSeconds(delay);
         enabled = true;
 
-        StopCoroutine(WatchForSwitchRequest());
+        //StopCoroutine(WatchForSwitchRequest());
         foreach (SpriteRenderer render in GetComponentsInChildren<SpriteRenderer>())
         {
             render.enabled = true;
@@ -102,7 +112,6 @@ public class PlaneBehaviour : MonoBehaviour, IPlayer {
         SpriteRenderer indicator = IndicateSwitch.GetComponent<SpriteRenderer>();
         for (;;)
         {
-            Debug.Log(switchRequested);
             if(Input.GetButton("Switch" + (int)currentPlayer) || Input.GetAxisRaw("Switch" + (int)currentPlayer) == 1)
             {
                 if(!switchRequested && !indicator.enabled)
@@ -118,12 +127,44 @@ public class PlaneBehaviour : MonoBehaviour, IPlayer {
             {
                 indicator.enabled = true;
             }
-            else if(!switchRequested)
+            else if(!switchRequested && indicator.enabled)
             {
                 indicator.enabled = false;
             }
 
             yield return new WaitForFixedUpdate();
         }
+    }
+
+    IEnumerator Aileron()
+    {
+        StopCoroutine(WatchForSwitchRequest());
+        isAileron = true;
+        foreach (SpriteRenderer render in transform.GetChild(0).GetComponentsInChildren<SpriteRenderer>())
+        {
+            render.enabled = false;
+        }
+
+        GunBehaviour gun = GetComponentInChildren<GunBehaviour>();
+        gun.StopAllCoroutines();
+
+        m_anim.SetTrigger("aileron");
+
+        yield return new WaitForSeconds(0.5f);
+        //Flip
+        flip = !flip;
+        transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
+
+        //Finish last half
+        yield return new WaitForSeconds(0.5f);
+
+        //StartCoroutine(WatchForSwitchRequest());
+        foreach (SpriteRenderer render in GetComponentsInChildren<SpriteRenderer>())
+        {
+            render.enabled = true;
+        }
+
+        isAileron = false;
+        yield return null;
     }
 }

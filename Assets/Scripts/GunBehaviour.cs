@@ -30,8 +30,7 @@ public class GunBehaviour : MonoBehaviour, IPlayer {
         m_flip = false;
         m_currentAmmo = TotalAmmo;
 
-        StartCoroutine(ChangeRotation());
-        StartCoroutine(Fire());
+        StartAllCoroutines();
 	}
 	
 	// Update is called once per frame
@@ -142,13 +141,18 @@ public class GunBehaviour : MonoBehaviour, IPlayer {
         StartCoroutine(SwitchOp(delay, newplayer));
     }
 
+    public void StartAllCoroutines()
+    {
+        StartCoroutine(ChangeRotation());
+        StartCoroutine(Fire());
+    }
+
     IEnumerator SwitchOp(float delay, Player.Control newplayer)
     {
         //m_animator.setTrigger("Transformers robots in disguise");
         yield return new WaitForSeconds(delay);
         CurrentPlayer = newplayer;
         m_currentAmmo = TotalAmmo;
-        StartCoroutine(ChangeRotation());
-        StartCoroutine(Fire());
+        StartAllCoroutines();
     }
 }
