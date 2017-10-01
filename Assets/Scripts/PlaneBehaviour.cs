@@ -29,7 +29,7 @@ public class PlaneBehaviour : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButton("Switch" + (int)currentPlayer) || Input.GetAxisRaw("Switch" + (int)currentPlayer) == 1)
+        if (Input.GetButton("Switch" + (int)currentPlayer) || Input.GetAxisRaw("Switch" + (int)currentPlayer) != 0)
         {
             Switch();
         }
@@ -39,24 +39,6 @@ public class PlaneBehaviour : MonoBehaviour {
         float actualSpeed = baseSpeed - gravity * (multiplier / (multiplier > 0? 2 : 1));
         rb.velocity = new Vector2(actualSpeed * Mathf.Cos(Mathf.Deg2Rad*direction), actualSpeed * Mathf.Sin(Mathf.Deg2Rad * direction));
         //TODO lerp speed instead?
-
-        SpriteRenderer indicator = IndicateSwitch.GetComponent<SpriteRenderer>();
-
-        if (Input.GetButton("Switch" + (int)currentPlayer) || Input.GetAxisRaw("Switch" + (int)currentPlayer) == 1)
-        {
-            if (!switchRequested && !indicator.enabled)
-            {
-                indicator.enabled = true;
-            }
-        }
-        else if (switchRequested && !indicator.enabled)
-        {
-            indicator.enabled = true;
-        }
-        else if (!switchRequested && indicator.enabled)
-        {
-            indicator.enabled = false;
-        }
     }
 
     public void triggerDeath()
@@ -68,15 +50,18 @@ public class PlaneBehaviour : MonoBehaviour {
     public void setSwitchRequested(bool s)
     {
         switchRequested = s;
+        IndicateSwitch.GetComponent<SpriteRenderer>().enabled = s;
+        
     }
 
     void Switch()
     {
+        IndicateSwitch.GetComponent<SpriteRenderer>().enabled = true;
         if (!switchRequested)
         {
             return;
         }
-
+        IndicateSwitch.GetComponent<SpriteRenderer>().enabled = false;
         m_anim.SetTrigger("reloading");
 
         enabled = false;
