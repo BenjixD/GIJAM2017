@@ -51,6 +51,11 @@ public class GunBehaviour : MonoBehaviour, IPlayer {
         return CurrentPlayer;
     }
 
+    public int GetCurrentAmmo()
+    {
+        return m_currentAmmo;
+    }
+
     IEnumerator ChangeRotation()
     {
         for(;;)
