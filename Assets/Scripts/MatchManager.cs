@@ -23,6 +23,7 @@ public class MatchManager : MonoBehaviour {
             if (planes[i] != null)
             {
                 huds[i].GetComponentInChildren<Slider>().normalizedValue = planes[i].GetComponentInChildren<PlaneHealth>().getNormalizedHealth();
+                huds[i].GetComponentInChildren<Text>().text = ("AMMO: " + planes[i].GetComponentInChildren<GunBehaviour>().GetCurrentAmmo()) ;
             }
             else
             {
