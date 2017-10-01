@@ -13,17 +13,20 @@ public class PlaneBehaviour : MonoBehaviour {
     // gravity is the speed additive before being modified by direction
     public float baseSpeed, pitchRate, gravity;
     float direction;
+
+    Animator m_anim;
     
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
         direction = transform.rotation.eulerAngles.z;
         switchRequested = false;
+        m_anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButton("Switch1"))
+        if (Input.GetButton("Switch" + (int)currentPlayer) || Input.GetAxisRaw("Switch" + (int)currentPlayer) == 1)
         {
             Switch();
         }
@@ -52,19 +55,32 @@ public class PlaneBehaviour : MonoBehaviour {
         {
             return;
         }
-        enabled = false;
-        StartCoroutine(SwitchOp(5f));
-        switchRequested = false;
 
+        m_anim.SetTrigger("reloading");
+
+        enabled = false;
+        switchRequested = false;
+        StartCoroutine(SwitchOp(1f));
+        
     }
 
     IEnumerator SwitchOp(float delay)
     {
+        foreach (SpriteRenderer render in transform.GetChild(0).GetComponentsInChildren<SpriteRenderer>())
+        {
+            render.enabled = false;
+        }
+
         GunBehaviour gun = GetComponentInChildren<GunBehaviour>();
         Player.Control gunplayer = gun.CurrentPlayer;
         gun.Switch(delay, currentPlayer);
         currentPlayer = gunplayer;
         yield return new WaitForSeconds(delay);
         enabled = true;
+
+        foreach (SpriteRenderer render in GetComponentsInChildren<SpriteRenderer>())
+        {
+            render.enabled = true;
+        }
     }
 }

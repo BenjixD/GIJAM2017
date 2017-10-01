@@ -32,11 +32,11 @@ public class GunBehaviour : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButtonDown("Switch1"))
+        if (Input.GetButtonDown("Switch" + (int)CurrentPlayer) || Input.GetAxisRaw("Switch" + (int)CurrentPlayer) == 1)
         {
             transform.root.GetComponent<PlaneBehaviour>().setSwitchRequested(true);
         }
-        else if (Input.GetButtonUp("Switch1"))
+        else if (Input.GetButtonUp("Switch" + (int)CurrentPlayer) || Input.GetAxisRaw("Switch" + (int)CurrentPlayer) == 0)
         {
             transform.root.GetComponent<PlaneBehaviour>().setSwitchRequested(false);
         }
@@ -128,7 +128,6 @@ public class GunBehaviour : MonoBehaviour {
         StopAllCoroutines();
         //m_animator.SetBool("Transformers", true);
         StartCoroutine(SwitchOp(delay, newplayer));
-        
     }
 
     IEnumerator SwitchOp(float delay, Player.Control newplayer)
