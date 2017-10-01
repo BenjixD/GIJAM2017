@@ -29,10 +29,10 @@ public class PlaneBehaviour : MonoBehaviour, IPlayer {
 	
 	// Update is called once per frame
 	void Update () {
-        //if (Input.GetButton("Switch" + (int)currentPlayer) || Input.GetAxisRaw("Switch" + (int)currentPlayer) == 1)
-        //{
-        //    Switch();
-        //}
+        if (Input.GetButton("Switch" + (int)currentPlayer) || Input.GetAxisRaw("Switch" + (int)currentPlayer) != 0)
+        {
+            Switch();
+        }
         direction = (direction +pitchRate * Input.GetAxisRaw("Vertical" + (int)currentPlayer)) % 360;
         transform.eulerAngles = new Vector3(0,0,direction);
         float multiplier = Mathf.Sin(Mathf.Deg2Rad * direction);
@@ -55,15 +55,18 @@ public class PlaneBehaviour : MonoBehaviour, IPlayer {
     public void setSwitchRequested(bool s)
     {
         switchRequested = s;
+        IndicateSwitch.GetComponent<SpriteRenderer>().enabled = s;
+        
     }
 
     void Switch()
     {
+        IndicateSwitch.GetComponent<SpriteRenderer>().enabled = true;
         if (!switchRequested)
         {
             return;
         }
-
+        IndicateSwitch.GetComponent<SpriteRenderer>().enabled = false;
         m_anim.SetTrigger("reloading");
 
         enabled = false;

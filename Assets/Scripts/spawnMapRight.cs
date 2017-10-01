@@ -5,6 +5,7 @@ using UnityEngine;
 public class spawnMapRight : MonoBehaviour {
 
 	public GameObject rightBoundary;
+	public GameObject Clouds;
 	public float spawnOffset = 18.6f;
 	// Use this for initialization
 	void Start () {
@@ -17,12 +18,13 @@ public class spawnMapRight : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D c){
-		Debug.Log ("hit");
+		//Debug.Log ("hit");
 		GameObject map = (GameObject)Instantiate(c.gameObject,rightBoundary.transform.position + new Vector3(spawnOffset,0,0), rightBoundary.transform.rotation);
+		map.transform.parent = Clouds.transform;
 	}
 
 	void OnTriggerExit2D(Collider2D c){
-		Debug.Log ("left");
+		//Debug.Log ("left");
 		Destroy (c.gameObject);
 	}
 }
