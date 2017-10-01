@@ -28,9 +28,26 @@ public class MatchManager : MonoBehaviour {
             else
             {
                 existingPlanes[i] = false;
+                //check winner
             }
         }
 	}
+
+    void checkWinner()
+    {
+        int win = -1;
+        for (int i = 0; i < existingPlanes.Length; i++){
+            if (existingPlanes[i] && win < 0)
+            {
+                win = i;
+            }
+            else if (win >= 0)
+            {
+                return;
+            }
+        }
+        Debug.Log("Plane " + win + " win");
+    }
 
     public void faceswap(GameObject plane) 
     {
