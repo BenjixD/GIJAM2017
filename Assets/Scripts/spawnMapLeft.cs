@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class spawnMapRight : MonoBehaviour {
-
-	public GameObject rightBoundary;
-	public GameObject Clouds;
+public class spawnMapLeft : MonoBehaviour {
+	
+	public GameObject leftBoundary;
 	public float spawnOffset = 18.6f;
+	public GameObject Clouds;
 	// Use this for initialization
 	void Start () {
 		
@@ -18,13 +18,13 @@ public class spawnMapRight : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D c){
-		//Debug.Log ("hit");
-		GameObject map = (GameObject)Instantiate(c.gameObject,rightBoundary.transform.position + new Vector3(spawnOffset,0,0), rightBoundary.transform.rotation);
+		Debug.Log ("hit");
+		GameObject map =(GameObject)Instantiate(c.gameObject,leftBoundary.transform.position - new Vector3(spawnOffset,0,0), leftBoundary.transform.rotation);
 		map.transform.parent = Clouds.transform;
 	}
 
 	void OnTriggerExit2D(Collider2D c){
-		//Debug.Log ("left");
+		Debug.Log ("left");
 		Destroy (c.gameObject);
 	}
 }
