@@ -7,6 +7,7 @@ public class PlaneBehaviour : MonoBehaviour {
     Rigidbody2D rb;
 
     public Player.Control currentPlayer;
+    public GameObject IndicateSwitch;
 
     bool switchRequested;
 
@@ -22,6 +23,8 @@ public class PlaneBehaviour : MonoBehaviour {
         direction = transform.rotation.eulerAngles.z;
         switchRequested = false;
         m_anim = GetComponent<Animator>();
+
+        //StartCoroutine(WatchForSwitchRequest());
 	}
 	
 	// Update is called once per frame
@@ -36,7 +39,25 @@ public class PlaneBehaviour : MonoBehaviour {
         float actualSpeed = baseSpeed - gravity * (multiplier / (multiplier > 0? 2 : 1));
         rb.velocity = new Vector2(actualSpeed * Mathf.Cos(Mathf.Deg2Rad*direction), actualSpeed * Mathf.Sin(Mathf.Deg2Rad * direction));
         //TODO lerp speed instead?
-	}
+
+        SpriteRenderer indicator = IndicateSwitch.GetComponent<SpriteRenderer>();
+
+        if (Input.GetButton("Switch" + (int)currentPlayer) || Input.GetAxisRaw("Switch" + (int)currentPlayer) == 1)
+        {
+            if (!switchRequested && !indicator.enabled)
+            {
+                indicator.enabled = true;
+            }
+        }
+        else if (switchRequested && !indicator.enabled)
+        {
+            indicator.enabled = true;
+        }
+        else if (!switchRequested && indicator.enabled)
+        {
+            indicator.enabled = false;
+        }
+    }
 
     public void triggerDeath()
     {
@@ -81,6 +102,31 @@ public class PlaneBehaviour : MonoBehaviour {
         foreach (SpriteRenderer render in GetComponentsInChildren<SpriteRenderer>())
         {
             render.enabled = true;
+        }
+    }
+
+    IEnumerator WatchForSwitchRequest()
+    {
+        SpriteRenderer indicator = IndicateSwitch.GetComponent<SpriteRenderer>();
+        for (;;)
+        {
+            if(Input.GetButton("Switch" + (int)currentPlayer) || Input.GetAxisRaw("Switch" + (int)currentPlayer) == 1)
+            {
+                if(!switchRequested && !indicator.enabled)
+                {
+                    indicator.enabled = true;
+                }
+            }
+            else if (switchRequested && !indicator.enabled)
+            {
+                indicator.enabled = true;
+            }
+            else if(!switchRequested && indicator.enabled)
+            {
+                indicator.enabled = false;
+            }
+
+            yield return new WaitForFixedUpdate();
         }
     }
 }

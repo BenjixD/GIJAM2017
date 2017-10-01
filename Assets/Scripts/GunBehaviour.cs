@@ -14,6 +14,9 @@ public class GunBehaviour : MonoBehaviour {
     public float FireRate;
     public float BulletSpeed;
 
+    public int TotalAmmo;
+    private int m_currentAmmo;
+
     private Rigidbody2D m_rigidbody2D;
     private Animator m_animator;
     private bool m_flip;
@@ -25,6 +28,7 @@ public class GunBehaviour : MonoBehaviour {
         m_rigidbody2D = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();
         m_flip = false;
+        m_currentAmmo = TotalAmmo;
 
         StartCoroutine(ChangeRotation());
         StartCoroutine(Fire());
@@ -100,19 +104,22 @@ public class GunBehaviour : MonoBehaviour {
             if(Input.GetAxisRaw("Fire" + (int)CurrentPlayer)!= 0)
             {
                 float fireCooldown = 1 / FireRate;
-                GameObject obj = (GameObject)Instantiate(BulletPrefab, BulletSpawnPoint.transform.position, transform.rotation);
                 
-                obj.GetComponent<IBullet>().SetSpawnedBy(this.gameObject);
-                obj.GetComponent<IBullet>().SetTravelProperties(transform.eulerAngles.z, BulletSpeed);
-
-                Collider2D[] colliders = obj.GetComponents<Collider2D>();
-                foreach(Collider2D col in colliders)
+                if(m_currentAmmo > 0)
                 {
-                    col.enabled = true;
+                    GameObject obj = (GameObject)Instantiate(BulletPrefab, BulletSpawnPoint.transform.position, transform.rotation);
+                    obj.GetComponent<IBullet>().SetSpawnedBy(this.gameObject);
+                    obj.GetComponent<IBullet>().SetTravelProperties(transform.eulerAngles.z, BulletSpeed);
+
+                    Collider2D[] colliders = obj.GetComponents<Collider2D>();
+                    foreach (Collider2D col in colliders)
+                    {
+                        col.enabled = true;
+                    }
+
+                    m_animator.SetTrigger("fire");
+                    m_currentAmmo--;
                 }
-
-
-                m_animator.SetTrigger("fire");
 
                 yield return new WaitForSeconds(fireCooldown);
             }
@@ -135,7 +142,7 @@ public class GunBehaviour : MonoBehaviour {
         //m_animator.setTrigger("Transformers robots in disguise");
         yield return new WaitForSeconds(delay);
         CurrentPlayer = newplayer;
-
+        m_currentAmmo = TotalAmmo;
         StartCoroutine(ChangeRotation());
         StartCoroutine(Fire());
     }
