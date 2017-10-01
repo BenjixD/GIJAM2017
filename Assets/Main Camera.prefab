@@ -1011,9 +1011,9 @@ MonoBehaviour:
   planes:
   - {fileID: 0}
   - {fileID: 0}
-  hpsliders:
-  - {fileID: 1796146827910492}
-  - {fileID: 1254282180419370}
+  huds:
+  - {fileID: 1378427079066662}
+  - {fileID: 1963182611097142}
 --- !u!114 &114744464093323042
 MonoBehaviour:
   m_ObjectHideFlags: 1
