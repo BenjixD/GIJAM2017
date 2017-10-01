@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 114834148899291388}
   - component: {fileID: 82616036062523806}
   - component: {fileID: 82501257094816876}
-  - component: {fileID: 114107310083722572}
+  - component: {fileID: 114546273313584050}
   m_Layer: 9
   m_Name: plane_model_0
   m_TagString: Untagged
@@ -408,7 +408,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -552,20 +552,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114107310083722572
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1545907536529176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 402236dd787f2c740aa4179cdf57562a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Players:
-  - {fileID: 1545907536529176}
-  - {fileID: 1177308701997294}
 --- !u!114 &114194746979402798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -577,15 +563,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c66de5e6badd944b4604db68e526bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentPlayer: 3
+  CurrentPlayer: 1
   PitchRate: 4
   DeadThreshold: 0.5
+  GlobalCounter: {fileID: 0}
   BulletSpawnPoint: {fileID: 1114838236307836}
   BulletPrefab: {fileID: 1746874047614816, guid: fec41d839b1e844f18f08384cc502c26,
     type: 2}
   FireRate: 6
   BulletSpeed: 10
   TotalAmmo: 10
+--- !u!114 &114546273313584050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1545907536529176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 888b179ba0e8a5d4597bb4dc7494e50b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CloudPrefab: {fileID: 1598696459024134, guid: f70366d9a0364fc4988f78bccc4d895e,
+    type: 2}
+  SpawnPoint: {fileID: 1118438888009990}
 --- !u!114 &114834148899291388
 MonoBehaviour:
   m_ObjectHideFlags: 1

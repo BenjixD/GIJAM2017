@@ -18,7 +18,7 @@ public class GunBehaviour : MonoBehaviour, IPlayer {
     public int TotalAmmo;
     private int m_currentAmmo;
 
-    private Rigidbody2D m_rigidbody2D;
+    //private Rigidbody2D m_rigidbody2D;
     private Animator m_animator;
     private bool m_flip;
     private float m_direction;
@@ -26,7 +26,7 @@ public class GunBehaviour : MonoBehaviour, IPlayer {
 
     // Use this for initialization
     void Start () {
-        m_rigidbody2D = GetComponent<Rigidbody2D>();
+        //m_rigidbody2D = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();
         m_flip = false;
         m_currentAmmo = TotalAmmo;
