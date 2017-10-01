@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MatchManager : MonoBehaviour {
 
-    public GameObject[] planes, hpsliders;
+    public GameObject[] planes, huds;
     bool[] existingPlanes;
 
 	// Use this for initialization
@@ -22,7 +22,7 @@ public class MatchManager : MonoBehaviour {
         {
             if (planes[i] != null)
             {
-                hpsliders[i].GetComponent<Slider>().normalizedValue = planes[i].GetComponentInChildren<PlaneHealth>().getNormalizedHealth();
+                huds[i].GetComponentInChildren<Slider>().normalizedValue = planes[i].GetComponentInChildren<PlaneHealth>().getNormalizedHealth();
             }
             else
             {
@@ -30,6 +30,22 @@ public class MatchManager : MonoBehaviour {
             }
         }
 	}
+
+    public void faceswap(GameObject plane) 
+    {
+        int hudindex = 0;
+        while (hudindex < planes.Length && planes[hudindex] != plane) ;
+        if (hudindex == planes.Length)
+        {
+            Debug.Log("MatchManager.faceswap: no plane matched");
+            return;
+        }
+        RectTransform face1 = huds[hudindex].transform.Find("face1").GetComponent<RectTransform>();
+        RectTransform face2 = huds[hudindex].transform.Find("face2").GetComponent<RectTransform>();
+        Vector3 temp = face1.localPosition;
+        face1.localPosition = face2.localPosition;
+        face2.localPosition = temp;
+    }
 
 
 }

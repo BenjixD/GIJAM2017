@@ -26,6 +26,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1118438888009990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4616485431818520}
+  m_Layer: 9
+  m_Name: SpawnSmokePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1145364755385530
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,6 +93,7 @@ GameObject:
   - component: {fileID: 114834148899291388}
   - component: {fileID: 82616036062523806}
   - component: {fileID: 82501257094816876}
+  - component: {fileID: 114107310083722572}
   m_Layer: 9
   m_Name: plane_model_0
   m_TagString: Untagged
@@ -145,6 +161,19 @@ Transform:
   m_Father: {fileID: 4702408652726202}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4616485431818520
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1118438888009990}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.91, y: -0.48, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4949168561995902}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4625406501270564
 Transform:
   m_ObjectHideFlags: 1
@@ -185,6 +214,7 @@ Transform:
   m_Children:
   - {fileID: 4702408652726202}
   - {fileID: 4992625172988790}
+  - {fileID: 4616485431818520}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -196,7 +226,7 @@ Transform:
   m_GameObject: {fileID: 1767350925554218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.07, y: -1.07, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_Children: []
   m_Father: {fileID: 4949168561995902}
   m_RootOrder: 1
@@ -522,6 +552,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114107310083722572
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1545907536529176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 402236dd787f2c740aa4179cdf57562a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Players:
+  - {fileID: 1545907536529176}
+  - {fileID: 1177308701997294}
 --- !u!114 &114194746979402798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -533,7 +577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c66de5e6badd944b4604db68e526bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentPlayer: 2
+  CurrentPlayer: 3
   PitchRate: 4
   DeadThreshold: 0.5
   BulletSpawnPoint: {fileID: 1114838236307836}
@@ -566,11 +610,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5cfeafeb70daff448f467217be104a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentPlayer: 1
+  currentPlayer: 2
   IndicateSwitch: {fileID: 1767350925554218}
   baseSpeed: 7
   pitchRate: 2.5
   gravity: 2
+  flip: 0
 --- !u!212 &212529229364937430
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -603,7 +648,7 @@ SpriteRenderer:
   m_SortingLayerID: 1641963065
   m_SortingLayer: 1
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: fac760cbb824c0b48b82613eab9029cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9a794167cb4ed2646bc7abe6dfccc207, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
